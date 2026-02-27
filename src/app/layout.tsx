@@ -29,24 +29,24 @@ const syneMono = Syne_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dimensity Labs — Creative Agency',
-    template: '%s — Dimensity Labs',
+    default: 'Dimensity Labs Labs — Creative Agency',
+    template: '%s — Dimensity Labs Labs',
   },
   description:
-    'Dimensity Labs — We make the invisible, inevitable. A creative agency specialising in brand identity, digital experiences, and strategic design.',
-  metadataBase: new URL('https://dimensitystudio.com'),
+    'Dimensity Labs Labs — We make the invisible, inevitable. A creative agency specialising in brand identity, digital experiences, and strategic design.',
+  metadataBase: new URL('https://DimensityLabsstudio.com'),
   openGraph: {
-    title: 'Dimensity Labs — Creative Agency',
+    title: 'Dimensity Labs Labs — Creative Agency',
     description:
       'A boutique creative agency crafting brand identities, digital platforms, and campaign systems for companies that refuse to be ordinary.',
-    url: 'https://dimensitystudio.com',
-    siteName: 'Dimensity Labs',
+    url: 'https://DimensityLabsstudio.com',
+    siteName: 'Dimensity Labs Labs',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dimensity Labs — Creative Agency',
+    title: 'Dimensity Labs Labs — Creative Agency',
     description:
       'A boutique creative agency crafting brand identities, digital platforms, and campaign systems for companies that refuse to be ordinary.',
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://dimensitystudio.com',
+    canonical: 'https://DimensityLabsstudio.com',
   },
 };
 

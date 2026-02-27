@@ -137,7 +137,7 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
               sizes="100vw"
             />
             <div className="map-placeholder-overlay">
-              <div className="map-pin" aria-label="Dimensity Labs, Oslo">
+              <div className="map-pin" aria-label="Dimensity Labs Labs, Oslo">
                 ◉
               </div>
             </div>

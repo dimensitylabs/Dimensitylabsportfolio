@@ -13,7 +13,7 @@ export function Mission() {
         <div className="container">
           <AnimatedSection as="div">
             <SectionHeading
-              eyebrow="About Dimensity "
+              eyebrow="About Dimensity Labs "
               titleHtml='A small studio with<br />an <em>unreasonable</em><br />attention to detail.'
               title="A small studio with an unreasonable attention to detail."
             />
@@ -23,7 +23,7 @@ export function Mission() {
             <AnimatedSection as="div" className="about-hero-img-wrap" delay={0.1}>
               <Image
                 src="https://picsum.photos/seed/studio/800/1000"
-                alt="Dimensity Labs workspace"
+                alt="Dimensity Labs Labs workspace"
                 width={800}
                 height={1000}
                 className="about-hero-img"
@@ -38,7 +38,7 @@ export function Mission() {
 
             <AnimatedSection as="div" className="about-hero-right" delay={0.2}>
               <p style={{ fontSize: 'clamp(1.05rem,1.4vw,1.2rem)', lineHeight: 1.7, color: 'var(--clr-ink-mid)' }}>
-                Dimensity Labs is a twelve-person creative agency based in Oslo,
+                Dimensity Labs Labs is a twelve-person creative agency based in Oslo,
                 Norway. We specialise in brand identity, digital design, and
                 creative campaigns for companies that take their visual presence
                 as seriously as their product.

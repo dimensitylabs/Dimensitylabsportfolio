@@ -8,7 +8,7 @@ import { CTA } from '@/components/sections/home/CTA';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Dimensity Labs is a twelve-person creative agency in Oslo. We specialise in brand identity, digital design, and creative campaigns for companies that take design seriously.',
+    'Dimensity Labs Labs is a twelve-person creative agency in Oslo. We specialise in brand identity, digital design, and creative campaigns for companies that take design seriously.',
 };
 
 export default function AboutPage() {

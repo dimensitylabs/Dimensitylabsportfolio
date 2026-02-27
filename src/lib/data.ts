@@ -134,7 +134,7 @@ export const featuredProjects: Project[] = [
     year: '2024',
     description: '',
     tags: ['Brand Identity'],
-    image: 'https://picsum.photos/seed/Dimensity01/900/507',
+    image: 'https://picsum.photos/seed/Dimensity Labs01/900/507',
     imageAlt: 'Meridian rebrand project',
     layout: 'featured',
   },
@@ -144,7 +144,7 @@ export const featuredProjects: Project[] = [
     year: '2024',
     description: '',
     tags: ['Digital Design'],
-    image: 'https://picsum.photos/seed/Dimensity02/600/800',
+    image: 'https://picsum.photos/seed/Dimensity Labs02/600/800',
     imageAlt: 'Lumio app design',
     layout: 'standard',
   },
@@ -154,7 +154,7 @@ export const featuredProjects: Project[] = [
     year: '2023',
     description: '',
     tags: ['Campaign'],
-    image: 'https://picsum.photos/seed/Dimensity03/480/360',
+    image: 'https://picsum.photos/seed/Dimensity Labs03/480/360',
     imageAlt: 'Kova campaign',
     layout: 'standard',
   },
@@ -164,7 +164,7 @@ export const featuredProjects: Project[] = [
     year: '2022',
     description: '',
     tags: ['Typography'],
-    image: 'https://picsum.photos/seed/Dimensity04/480/360',
+    image: 'https://picsum.photos/seed/Dimensity Labs04/480/360',
     imageAlt: 'Palaver editorial project',
     layout: 'standard',
   },
@@ -174,7 +174,7 @@ export const featuredProjects: Project[] = [
     year: '2022',
     description: '',
     tags: ['Web Design'],
-    image: 'https://picsum.photos/seed/Dimensity05/480/360',
+    image: 'https://picsum.photos/seed/Dimensity Labs05/480/360',
     imageAlt: 'Verdant website',
     layout: 'standard',
   },
@@ -513,9 +513,9 @@ export const offices: Office[] = [
 ];
 
 export const contactEmails: ContactEmail[] = [
-  { label: 'New Business', email: 'hello@dimensitystudio.com' },
-  { label: 'For Press & Speaking', email: 'press@dimensitystudio.com' },
-  { label: 'Careers', email: 'careers@dimensitystudio.com' },
+  { label: 'New Business', email: 'hello@Dimensity Labsstudio.com' },
+  { label: 'For Press & Speaking', email: 'press@Dimensity Labsstudio.com' },
+  { label: 'Careers', email: 'careers@Dimensity Labsstudio.com' },
 ];
 
 export const socialLinks = [
@@ -550,7 +550,7 @@ export const budgetOptions = [
 export const testimonial: Testimonial = {
   quote:
     'Good design is indistinguishable from the right idea, expressed at the right moment, in the right form.',
-  attribution: '— Dimensity Labs Manifesto, 2016',
+  attribution: '— Dimensity Labs Labs Manifesto, 2016',
 };
 
 export const awardsLabels: string[] = [

@@ -10,7 +10,7 @@ interface ButtonProps {
   className?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
-  onClick?: () => Dimensity ;
+  onClick?: () => void;
   style?: React.CSSProperties;
   ariaLabel?: string;
   fullWidth?: boolean;

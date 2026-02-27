@@ -39,9 +39,9 @@ export function Navbar() {
     <header>
       <nav className={`site-nav${scrolled ? ' scrolled' : ''}`}>
         <div className="container">
-          <Link href="/" className="nav-logo" aria-label="Dimensity Labs Home">
+          <Link href="/" className="nav-logo" aria-label="Dimensity Labs Labs Home">
             <span className="nav-logo-dot" />
-            Dimensity 
+            Dimensity Labs 
           </Link>
 
           <ul className="nav-links">

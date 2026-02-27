@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-text" aria-hidden="true">
-        Dimensity 
+        Dimensity Labs 
       </div>
 
       <div className="container">
@@ -29,7 +29,7 @@ export function Hero() {
 
             <AnimatedSection as="div" className="hero-sub" delay={0.22}>
               <p className="hero-desc">
-                Dimensity Labs is a boutique creative agency crafting brand
+                Dimensity Labs Labs is a boutique creative agency crafting brand
                 identities, digital platforms, and campaign systems for
                 companies that refuse to be ordinary.
               </p>

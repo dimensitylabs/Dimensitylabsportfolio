@@ -8,9 +8,9 @@ export function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <Link href="/" className="nav-logo" aria-label="Dimensity Labs Home">
+            <Link href="/" className="nav-logo" aria-label="Dimensity Labs Labs Home">
               <span className="nav-logo-dot" />
-              Dimensity 
+              Dimensity Labs 
             </Link>
             <p className="footer-tagline">
               We make the invisible, inevitable. A creative studio that builds
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p className="footer-copy">© {new Date().getFullYear()} Dimensity Labs. All rights reserved.</p>
+          <p className="footer-copy">© {new Date().getFullYear()} Dimensity Labs Labs. All rights reserved.</p>
           <nav className="footer-bottom-links" aria-label="Legal">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Use</a>
