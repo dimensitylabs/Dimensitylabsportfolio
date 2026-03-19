@@ -20,27 +20,27 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
       {/* Contact Hero */}
       <section className="contact-hero">
         <div className="container">
-          <AnimatedSection as="div">
+          <AnimatedSection as="div" className="contact-heading">
             <SectionHeading
               eyebrow="Get In Touch"
-              titleHtml="Let&rsquo;s build something<br /><em>inevitable.</em>"
-              title="Let's build something inevitable."
+              titleHtml="Let&rsquo;s build something<br /><em>extraordinary.</em>"
+              title="Let's build something extraordinary."
             />
           </AnimatedSection>
 
           <div className="contact-hero-grid">
             <AnimatedSection as="div" className="contact-info" delay={0.1}>
               {/* Availability badge */}
-              <div className="contact-availability">
+              <div className="contact-availability contact-badge">
                 <span className="avail-dot" />
                 <span className="avail-text">
-                  Currently accepting projects — Booking Q2 2026
+                  Currently accepting projects — Est. 2025
                 </span>
               </div>
 
               {/* Emails */}
               {contactEmails.map((item) => (
-                <div key={item.label}>
+                <div className="contact-info-item" key={item.label}>
                   <div className="contact-info-label">{item.label}</div>
                   <div className="contact-info-value">
                     <a href={`mailto:${item.email}`}>{item.email}</a>
@@ -49,7 +49,7 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
               ))}
 
               {/* Socials */}
-              <div className="contact-socials">
+              <div className="contact-socials contact-info-item">
                 {socialLinks.map((link) => (
                   <a
                     key={link.label}
@@ -65,7 +65,10 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
               </div>
 
               {/* Awards */}
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: 'var(--sp-sm)' }}>
+              <div
+                className="contact-info-item"
+                style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: 'var(--sp-sm)' }}
+              >
                 {awardsLabels.map((a) => (
                   <span className="pill" key={a}>{a}</span>
                 ))}
@@ -73,19 +76,19 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
             </AnimatedSection>
 
             {/* Form slot */}
-            <div>{formSlot}</div>
+            <div className="contact-form">{formSlot}</div>
           </div>
         </div>
       </section>
 
       {/* Map & Offices */}
-      <section className="contact-offices">
+      <section className="contact-offices locations-section">
         <div className="container">
           <AnimatedSection as="div">
             <SectionHeading
-              eyebrow="Our Studios"
-              titleHtml='Where to <em>find us.</em>'
-              title="Where to find us."
+              eyebrow="Where We Work"
+              titleHtml='Mumbai-based.<br /><em>Remote-first.</em>'
+              title="Mumbai-based. Remote-first."
             />
           </AnimatedSection>
 
@@ -93,7 +96,7 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
             {offices.map((office, i) => (
               <AnimatedSection
                 as="div"
-                className="office-card"
+                className="office-card location-card"
                 key={office.city}
                 delay={i * 0.1}
               >
@@ -130,14 +133,14 @@ export function ContactInfo({ formSlot }: ContactInfoProps) {
         <div className="container">
           <div className="map-placeholder">
             <Image
-              src="https://picsum.photos/seed/mapOslo/1200/900"
-              alt="Map of Oslo, Norway"
+              src="https://picsum.photos/seed/mapMumbai/1200/900"
+              alt="Map of Mumbai, India"
               width={1200}
               height={900}
               sizes="100vw"
             />
             <div className="map-placeholder-overlay">
-              <div className="map-pin" aria-label="Dimensity Labs Labs, Oslo">
+              <div className="map-pin" aria-label="Dimensity Labs, Mumbai">
                 ◉
               </div>
             </div>

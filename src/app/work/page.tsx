@@ -1,19 +1,21 @@
 // src/app/work/page.tsx
 import type { Metadata } from 'next';
+import WorkAnimations from '@/components/WorkAnimations';
 import { ProjectGrid } from '@/components/sections/work/ProjectGrid';
 import { CTA } from '@/components/sections/home/CTA';
 
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Selected projects from Dimensity Labs Labs, 2021–2024. Brand identity, digital design, campaign, editorial, and packaging work.',
+    'Projects from Dimensity Labs. Web development, mobile apps, AI solutions, automation, and branding.',
 };
 
 export default function WorkPage() {
   return (
     <>
+      <WorkAnimations />
       <ProjectGrid />
-      <CTA />
+      <CTA prefix="Your project could be next." emphasis="Let's talk." />
     </>
   );
 }

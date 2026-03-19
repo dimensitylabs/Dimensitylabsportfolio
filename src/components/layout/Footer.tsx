@@ -8,13 +8,12 @@ export function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <Link href="/" className="nav-logo" aria-label="Dimensity Labs Labs Home">
+            <Link href="/" className="nav-logo" aria-label="Dimensity Labs Home">
               <span className="nav-logo-dot" />
-              Dimensity Labs 
+              Dimensity Labs
             </Link>
             <p className="footer-tagline">
-              We make the invisible, inevitable. A creative studio that builds
-              brands for companies that refuse to be ordinary.
+              Building the Digital Future. Websites, Apps, AI Solutions &amp; Automations for businesses ready to scale.
             </p>
             <div className="footer-socials">
               {socialLinks.map((s) => (
@@ -44,12 +43,12 @@ export function Footer() {
           <div>
             <p className="footer-col-title">Services</p>
             <ul className="footer-links">
-              <li><Link href="/services">Brand Identity</Link></li>
-              <li><Link href="/services">Digital Design</Link></li>
-              <li><Link href="/services">Motion Design</Link></li>
-              <li><Link href="/services">Campaigns</Link></li>
-              <li><Link href="/services">Packaging</Link></li>
-              <li><Link href="/services">Editorial</Link></li>
+              <li><Link href="/services">Web Development</Link></li>
+              <li><Link href="/services">Mobile Apps</Link></li>
+              <li><Link href="/services">AI Solutions</Link></li>
+              <li><Link href="/services">AI Automation</Link></li>
+              <li><Link href="/services">Digital Branding</Link></li>
+              <li><Link href="/services">Consulting</Link></li>
             </ul>
           </div>
 
@@ -60,13 +59,13 @@ export function Footer() {
               <li><Link href="/about#team">The Team</Link></li>
               <li><Link href="/about#values">Values</Link></li>
               <li><Link href="/contact">Careers</Link></li>
-              <li><Link href="/contact">Press Kit</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p className="footer-copy">© {new Date().getFullYear()} Dimensity Labs Labs. All rights reserved.</p>
+          <p className="footer-copy">© 2025 Dimensity Labs. All rights reserved.</p>
           <nav className="footer-bottom-links" aria-label="Legal">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Use</a>

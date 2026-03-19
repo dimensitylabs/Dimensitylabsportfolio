@@ -11,19 +11,23 @@ export function Mission() {
       {/* About Hero */}
       <section className="about-hero">
         <div className="container">
-          <AnimatedSection as="div">
+          <AnimatedSection as="div" className="about-headline">
             <SectionHeading
-              eyebrow="About Dimensity Labs "
-              titleHtml='A small studio with<br />an <em>unreasonable</em><br />attention to detail.'
-              title="A small studio with an unreasonable attention to detail."
+              eyebrow="About Dimensity Labs"
+              titleHtml='A digital studio<br />built for <em>speed</em><br />and scale.'
+              title="A digital studio built for speed and scale."
             />
           </AnimatedSection>
 
           <div className="about-hero-grid">
-            <AnimatedSection as="div" className="about-hero-img-wrap" delay={0.1}>
+            <AnimatedSection
+              as="div"
+              className="about-hero-img-wrap about-intro-image"
+              delay={0.1}
+            >
               <Image
                 src="https://picsum.photos/seed/studio/800/1000"
-                alt="Dimensity Labs Labs workspace"
+                alt="Dimensity Labs workspace"
                 width={800}
                 height={1000}
                 className="about-hero-img"
@@ -31,26 +35,28 @@ export function Mission() {
                 priority
               />
               <div className="about-hero-img-badge">
-                <strong>12</strong>
-                People, one shared standard
+                <strong>2025</strong>
+                Est. Mumbai, India
               </div>
             </AnimatedSection>
 
-            <AnimatedSection as="div" className="about-hero-right" delay={0.2}>
+            <AnimatedSection
+              as="div"
+              className="about-hero-right about-intro-text"
+              delay={0.2}
+            >
               <p style={{ fontSize: 'clamp(1.05rem,1.4vw,1.2rem)', lineHeight: 1.7, color: 'var(--clr-ink-mid)' }}>
-                Dimensity Labs Labs is a twelve-person creative agency based in Oslo,
-                Norway. We specialise in brand identity, digital design, and
-                creative campaigns for companies that take their visual presence
-                as seriously as their product.
+                Dimensity Labs is a Mumbai-based digital agency building websites,
+                mobile apps, and AI-powered systems for startups and businesses
+                ready to scale.
               </p>
               <p style={{ fontSize: 'clamp(1.05rem,1.4vw,1.2rem)', lineHeight: 1.7, color: 'var(--clr-ink-mid)' }}>
-                We&apos;re small deliberately. Every project gets our senior team
-                from day one — not juniors learning on your budget. That constraint
-                is the reason our work looks the way it does.
+                We ship fast, communicate clearly, and focus on outcomes: speed,
+                conversions, and systems that keep working after launch.
               </p>
               <div style={{ display: 'flex', gap: 'var(--sp-xl)', marginTop: 'var(--sp-md)' }}>
                 {aboutStats.map((s) => (
-                  <div key={s.label}>
+                  <div className="about-stat" key={s.label}>
                     <div className="stat-num">{s.value}</div>
                     <div className="stat-label">{s.label}</div>
                   </div>
@@ -62,9 +68,9 @@ export function Mission() {
       </section>
 
       {/* Story / Timeline */}
-      <section className="about-story">
+      <section className="about-story timeline-section">
         <div className="container">
-          <div className="about-story-grid">
+          <div className="about-story-grid" style={{ position: 'relative' }}>
             <div className="about-story-sticky">
               <AnimatedSection as="div">
                 <SectionHeading
@@ -73,10 +79,9 @@ export function Mission() {
                   title="How we got here."
                 />
                 <p style={{ color: 'var(--clr-muted)', marginTop: 'var(--sp-md)', maxWidth: '440px', lineHeight: 1.65 }}>
-                  We didn&apos;t start with a business plan. We started with a
-                  conviction that most brand design was either decoration or
-                  formula — and that something more rigorous and more human was
-                  possible.
+                  We started Dimensity Labs to help founders and teams move from
+                  idea to launch without the usual chaos. Clear planning, strong
+                  execution, and technology that solves real problems.
                 </p>
                 <div style={{ marginTop: 'var(--sp-lg)' }}>
                   <Button href="/contact" variant="outline">
@@ -90,6 +95,7 @@ export function Mission() {
               {timeline.map((event, i) => (
                 <AnimatedSection
                   as="div"
+                  className="timeline-item"
                   key={event.year}
                   delay={i * 0.1}
                   style={{
@@ -117,6 +123,19 @@ export function Mission() {
                 </AnimatedSection>
               ))}
             </div>
+            <div
+              className="timeline-line"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: 0,
+                bottom: 0,
+                width: '1px',
+                background: 'var(--clr-border)',
+                transform: 'translateX(-50%)',
+              }}
+            />
           </div>
         </div>
       </section>

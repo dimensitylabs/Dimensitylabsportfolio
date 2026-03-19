@@ -11,25 +11,21 @@ export function ServicesList() {
       {/* Services Hero */}
       <section className="services-hero">
         <div className="container">
-          <AnimatedSection as="div">
+          <AnimatedSection as="div" className="services-page-heading">
             <SectionHeading
               eyebrow="Services"
-              titleHtml='Six disciplines.<br /><em>One integrated</em> practice.'
-              title="Six disciplines. One integrated practice."
+              titleHtml='What We Do.<br /><em>End-to-end</em> digital services.'
+              title="What We Do. End-to-end digital services."
             />
           </AnimatedSection>
 
           <div className="services-hero-grid">
-            <AnimatedSection as="div" delay={0.1}>
+            <AnimatedSection as="div" className="services-page-sub" delay={0.1}>
               <p style={{ fontSize: 'clamp(1.05rem,1.4vw,1.2rem)', lineHeight: 1.7, color: 'var(--clr-ink-mid)' }}>
-                Every project we take on draws from some combination of our six
-                core practice areas. The precise mix depends on you — we
-                don&apos;t sell fixed packages, we build the scope around the
-                actual problem.
+                From landing pages to full AI automation pipelines — everything your business needs to grow digitally, under one roof.
               </p>
               <p style={{ fontSize: 'clamp(1.05rem,1.4vw,1.2rem)', lineHeight: 1.7, color: 'var(--clr-ink-mid)', marginTop: 'var(--sp-md)' }}>
-                Below is what we do, how we do it, and what it costs.
-                Transparently. Because vague pricing helps no-one.
+                Clear scope. Clear pricing. Clear outcomes.
               </p>
             </AnimatedSection>
 
@@ -55,7 +51,7 @@ export function ServicesList() {
       </section>
 
       {/* Process */}
-      <section className="services-process dark-section">
+      <section className="services-process dark-section process-section">
         <div className="container">
           <AnimatedSection as="div">
             <SectionHeading
@@ -66,6 +62,17 @@ export function ServicesList() {
             />
           </AnimatedSection>
 
+          <div
+            className="process-connector"
+            aria-hidden="true"
+            style={{
+              height: '1px',
+              background: 'rgba(255,255,255,0.15)',
+              width: '100%',
+              marginTop: 'var(--sp-xl)',
+              transformOrigin: 'left center',
+            }}
+          />
           <div className="process-steps">
             {processSteps.map((step, i) => (
               <AnimatedSection
@@ -84,7 +91,7 @@ export function ServicesList() {
       </section>
 
       {/* Pricing */}
-      <section className="services-pricing">
+      <section className="services-pricing pricing-section">
         <div className="container">
           <AnimatedSection as="div">
             <SectionHeading
@@ -138,7 +145,10 @@ export function ServicesList() {
       </section>
 
       {/* FAQs */}
-      <section style={{ paddingBlock: 'var(--sp-3xl)', borderTop: '1px solid var(--clr-border)' }}>
+      <section
+        className="faq-section"
+        style={{ paddingBlock: 'var(--sp-3xl)', borderTop: '1px solid var(--clr-border)' }}
+      >
         <div className="container" style={{ maxWidth: '760px' }}>
           <AnimatedSection as="div">
             <SectionHeading
@@ -152,6 +162,7 @@ export function ServicesList() {
             {faqs.map((faq, i) => (
               <AnimatedSection
                 as="div"
+                className="faq-item"
                 key={i}
                 delay={i * 0.06}
                 style={{

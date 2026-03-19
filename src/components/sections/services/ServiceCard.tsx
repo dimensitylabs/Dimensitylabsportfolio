@@ -9,23 +9,30 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
   return (
-    <AnimatedSection as="div" className="service-row" delay={index * 0.08}>
+    <AnimatedSection
+      as="div"
+      className="service-row service-block"
+      delay={index * 0.08}
+    >
       <div>
-        <span className="service-row-num">{service.num}</span>
+        <span className="service-row-num service-block-number">{service.num}</span>
       </div>
       <div>
-        <h3 className="service-row-title">{service.title}</h3>
+        <h3 className="service-row-title service-block-title">{service.title}</h3>
         <div className="service-row-tags">
           {service.tags.map((tag) => (
-            <span className="pill" key={tag}>{tag}</span>
+            <span className="pill service-block-tag" key={tag}>{tag}</span>
           ))}
         </div>
-        <p className="service-row-body" style={{ marginTop: 'var(--sp-md)' }}>
+        <p
+          className="service-row-body service-block-body"
+          style={{ marginTop: 'var(--sp-md)' }}
+        >
           {service.description}
         </p>
         {service.detail && (
           <p
-            className="service-row-body"
+            className="service-row-body service-block-body"
             style={{ marginTop: '12px', fontStyle: 'italic', opacity: 0.75 }}
           >
             {service.detail}

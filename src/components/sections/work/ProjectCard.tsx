@@ -19,17 +19,29 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <AnimatedSection
       as="article"
-      className={`case-card ${layoutClass}`}
+      className={`case-card project-card ${layoutClass}`}
       delay={index * 0.06}
     >
-      <Image
-        src={project.image}
-        alt={project.imageAlt}
-        width={1200}
-        height={750}
-        className="case-img"
-        sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
-      />
+      <div style={{ position: 'relative' }}>
+        <Image
+          src={project.image}
+          alt={project.imageAlt}
+          width={1200}
+          height={750}
+          className="case-img"
+          sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+        />
+        <div
+          className="card-overlay"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.4)',
+            opacity: 0,
+            pointerEvents: 'none',
+          }}
+        />
+      </div>
       <div className="case-info">
         <div className="case-meta">
           <span className="case-cat">{project.category}</span>
@@ -42,12 +54,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="case-link-row">
           <div className="case-tags">
             {project.tags.map((tag) => (
-              <span className="pill" key={tag}>{tag}</span>
+              <span className="pill project-tag" key={tag}>{tag}</span>
             ))}
           </div>
           {project.award && (
             <span
-              className="pill"
+              className="pill project-tag"
               style={{ background: 'var(--clr-accent)', color: 'var(--clr-ink)' }}
             >
               {project.award}

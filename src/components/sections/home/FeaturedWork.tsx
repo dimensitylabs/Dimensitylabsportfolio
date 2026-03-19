@@ -13,7 +13,7 @@ export function FeaturedWork() {
         <AnimatedSection as="div" className="section-header">
           <SectionHeading
             eyebrow="Selected Projects"
-            title="Work that speaks&nbsp;louder."
+            title="Our Work. Built with purpose."
           />
           <Button href="/work" variant="outline">
             View All Work
@@ -32,7 +32,7 @@ export function FeaturedWork() {
             return (
               <AnimatedSection
                 as="div"
-                className={`proj-card ${sizeClass}`}
+                className={`proj-card work-card ${sizeClass}`}
                 key={proj.title}
                 delay={i * 0.08}
               >

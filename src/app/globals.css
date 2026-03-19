@@ -2008,3 +2008,58 @@ input, textarea, select { font: inherit; }
   font-weight: 600;
   color: var(--clr-ink);
 }
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  perspective: 1200px;
+}
+
+.hero-headline,
+.hero-subheadline,
+.hero-eyebrow {
+  opacity: 0;
+}
+
+.work-card,
+.project-card {
+  overflow: hidden;
+}
+
+.work-card img,
+.project-card img {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+* {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}

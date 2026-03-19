@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-text" aria-hidden="true">
-        Dimensity Labs 
+        Dimensity Labs
       </div>
 
       <div className="container">
@@ -14,29 +14,32 @@ export function Hero() {
           <div className="hero-main">
             <AnimatedSection as="div" className="hero-eyebrow" style={{ marginBottom: 'var(--sp-lg)' }}>
               <span className="live-dot" aria-hidden="true" />
-              <span className="t-label">Currently Taking Projects — Est. 2016</span>
+              <span className="t-label">Currently Taking Projects — Est. 2025</span>
             </AnimatedSection>
 
             <AnimatedSection as="div" delay={0.1}>
-              <h1 className="hero-title">
-                We make the
+              <h1 className="hero-title hero-headline">
+                Building Digital Products
                 <br />
-                <em>invisible,</em>
+                <em>That Actually Work.</em>
                 <br />
-                inevitable.
+                &nbsp;
               </h1>
             </AnimatedSection>
 
             <AnimatedSection as="div" className="hero-sub" delay={0.22}>
-              <p className="hero-desc">
-                Dimensity Labs Labs is a boutique creative agency crafting brand
-                identities, digital platforms, and campaign systems for
-                companies that refuse to be ordinary.
+              <p className="hero-desc hero-subheadline">
+                We design and build websites, mobile apps, and AI-powered solutions for startups and businesses ready to scale.
               </p>
-              <div className="hero-meta">
+              <div className="hero-meta hero-cta">
                 {heroStats.map((stat) => (
                   <div className="hero-stat" key={stat.label}>
-                    <div className="hero-stat-num">{stat.value}</div>
+                    <div
+                      className="hero-stat-num hero-stat-number"
+                      data-value={stat.value.replace(/[^\d]/g, '')}
+                    >
+                      {stat.value}
+                    </div>
                     <div className="hero-stat-label">{stat.label}</div>
                   </div>
                 ))}

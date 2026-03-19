@@ -76,9 +76,9 @@ export function ContactForm() {
 
   return (
     <AnimatedSection as="div" className="contact-form-wrap" delay={0.1}>
-      <form onSubmit={handleSubmit} noValidate>
+      <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-group form-field">
             <label htmlFor="name" className="form-label">
               Full Name <span aria-hidden="true">*</span>
             </label>
@@ -93,7 +93,7 @@ export function ContactForm() {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group form-field">
             <label htmlFor="email" className="form-label">
               Email Address <span aria-hidden="true">*</span>
             </label>
@@ -110,7 +110,7 @@ export function ContactForm() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="form-group form-field">
           <label htmlFor="company" className="form-label">
             Company / Organisation
           </label>
@@ -126,7 +126,7 @@ export function ContactForm() {
         </div>
 
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-group form-field">
             <label htmlFor="service" className="form-label">
               Service Interested In
             </label>
@@ -144,7 +144,7 @@ export function ContactForm() {
               ))}
             </select>
           </div>
-          <div className="form-group">
+          <div className="form-group form-field">
             <label htmlFor="budget" className="form-label">
               Estimated Budget
             </label>
@@ -164,7 +164,7 @@ export function ContactForm() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="form-group form-field">
           <label htmlFor="message" className="form-label">
             Project Details <span aria-hidden="true">*</span>
           </label>
@@ -186,6 +186,7 @@ export function ContactForm() {
           </span>
           <Button
             variant="primary"
+            className="submit-btn"
             disabled={status === 'submitting'}
             ariaLabel="Send project enquiry"
           >

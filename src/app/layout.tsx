@@ -4,6 +4,8 @@ import { Syne, Instrument_Serif, Syne_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import SmoothScrollProvider from '@/components/SmoothScrollProvider';
+import CustomCursor from '@/components/CustomCursor';
 
 const syne = Syne({
   variable: '--font-syne',
@@ -29,33 +31,33 @@ const syneMono = Syne_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dimensity Labs Labs — Creative Agency',
-    template: '%s — Dimensity Labs Labs',
+    default: 'Dimensity Labs — Digital Agency',
+    template: '%s — Dimensity Labs',
   },
   description:
-    'Dimensity Labs Labs — We make the invisible, inevitable. A creative agency specialising in brand identity, digital experiences, and strategic design.',
-  metadataBase: new URL('https://DimensityLabsstudio.com'),
+    'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
+  metadataBase: new URL('https://dimensitylabs.com'),
   openGraph: {
-    title: 'Dimensity Labs Labs — Creative Agency',
+    title: 'Dimensity Labs — Digital Agency',
     description:
-      'A boutique creative agency crafting brand identities, digital platforms, and campaign systems for companies that refuse to be ordinary.',
-    url: 'https://DimensityLabsstudio.com',
-    siteName: 'Dimensity Labs Labs',
+      'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
+    url: 'https://dimensitylabs.com',
+    siteName: 'Dimensity Labs',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dimensity Labs Labs — Creative Agency',
+    title: 'Dimensity Labs — Digital Agency',
     description:
-      'A boutique creative agency crafting brand identities, digital platforms, and campaign systems for companies that refuse to be ordinary.',
+      'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://DimensityLabsstudio.com',
+    canonical: 'https://dimensitylabs.com',
   },
 };
 
@@ -70,10 +72,13 @@ export default function RootLayout({
         className={`${syne.variable} ${instrumentSerif.variable} ${syneMono.variable} antialiased`}
         style={{ fontFamily: 'var(--font-instrument), Georgia, serif' }}
       >
-        <div className="page-load-bar" aria-hidden="true" />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <CustomCursor />
+        <SmoothScrollProvider>
+          <div className="page-load-bar" aria-hidden="true" />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

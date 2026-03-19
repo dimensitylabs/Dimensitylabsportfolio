@@ -7,7 +7,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ProjectCard } from '@/components/sections/work/ProjectCard';
 import { allProjects } from '@/lib/data';
 
-const categories = ['All', ...Array.from(new Set(allProjects.flatMap((p) => p.tags)))];
+const categories = ['All', 'Web Development', 'Mobile App', 'AI Solutions', 'AI Automation', 'Branding'];
 
 export function ProjectGrid() {
   const [filter, setFilter] = useState('All');
@@ -25,11 +25,11 @@ export function ProjectGrid() {
       {/* Work Hero */}
       <section className="work-hero">
         <div className="container">
-          <AnimatedSection as="div">
+          <AnimatedSection as="div" className="work-page-heading">
             <SectionHeading
               eyebrow="Our Work"
-              titleHtml='Selected projects,<br /><em>2021–2024.</em>'
-              title="Selected projects, 2021–2024."
+              titleHtml='Our Work.<br /><em>Projects we&rsquo;re proud of.</em>'
+              title="Our Work. Projects we're proud of."
             />
           </AnimatedSection>
 
@@ -37,7 +37,7 @@ export function ProjectGrid() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className={`filter-btn${filter === cat ? ' active' : ''}`}
+                className={`filter-btn filter-pill${filter === cat ? ' active' : ''}`}
                 onClick={() => setFilter(cat)}
                 type="button"
               >

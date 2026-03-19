@@ -29,6 +29,8 @@ export interface TeamMember {
   name: string;
   role: string;
   image: string;
+  bio?: string;
+  href?: string;
 }
 
 export interface Testimonial {

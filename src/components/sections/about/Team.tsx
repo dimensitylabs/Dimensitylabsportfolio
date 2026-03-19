@@ -11,8 +11,8 @@ export function Team() {
         <AnimatedSection as="div">
           <SectionHeading
             eyebrow="The Team"
-            titleHtml='Twelve people.<br /><em>No departments.</em>'
-            title="Twelve people. No departments."
+            titleHtml='Small team.<br /><em>Big output.</em>'
+            title="Small team. Big output."
           />
         </AnimatedSection>
 

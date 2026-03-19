@@ -24,101 +24,84 @@ export const navLinks: NavLink[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export const clientLogos: string[] = [
-  'Meridian',
-  'Ashford & Co.',
-  'Lumio',
-  'Drystone Capital',
-  'Noctua Health',
-  'Palaver',
-  'Kova Systems',
-  'The Verdant Group',
-];
-
 export const marqueeItems: string[] = [
-  'Brand Identity',
-  'Digital Experiences',
-  'Motion Design',
-  'Campaign Strategy',
-  'Typography Systems',
-  'Web Design',
-  'Packaging',
-  'Art Direction',
+  'Web Development',
+  'Mobile Apps',
+  'AI Solutions',
+  'AI Automation',
+  'Digital Branding',
+  'Consulting',
+  'Web Development',
+  'Mobile Apps',
 ];
 
 export const heroStats: Stat[] = [
-  { value: '140+', label: 'Brands Transformed' },
-  { value: '9', label: 'Years in Practice' },
-  { value: '22', label: 'Industry Awards' },
+  { value: '10+', label: 'Projects Delivered' },
+  { value: '5+', label: 'Services Offered' },
+  { value: '100%', label: 'Client Satisfaction' },
 ];
 
 export const aboutStats: Stat[] = [
-  { value: '140+', label: 'Projects Completed' },
-  { value: '22', label: 'Industry Awards' },
-  { value: '12', label: 'Studio Members' },
+  { value: '10+', label: 'Projects Delivered' },
+  { value: '5+', label: 'Services Offered' },
+  { value: 'Global', label: 'Clients' },
 ];
 
 export const philosophyStats: Stat[] = [
-  { value: '140+', label: 'Brands Built' },
-  { value: '22', label: 'Awards Won' },
-  { value: '9', label: 'Years Active' },
-  { value: '96%', label: 'Client Retention' },
+  { value: '10+', label: 'Projects Delivered' },
+  { value: '5+', label: 'Services' },
+  { value: 'Est. 2025', label: '' },
+  { value: '100%', label: 'Client Satisfaction' },
 ];
 
 export const services: Service[] = [
   {
     num: '01',
-    title: 'Brand Identity & Strategy',
-    tags: ['Visual Identity', 'Naming', 'Brand Voice', 'Strategy', 'Guidelines'],
+    title: 'Web Design & Development',
+    tags: ['Landing Pages', 'Web Apps', 'E-Commerce', 'CMS', 'SEO'],
     description:
-      'The core of what we do. We build brand systems that have genuine coherence: a name that works, a visual identity that\'s distinctly yours, a tone of voice that sounds like a real perspective, and a set of guidelines that make every future touchpoint easier to get right.',
-    detail:
-      'We don\'t design logos — we build the logic that makes everything from a business card to a building wrap feel inevitable.',
+      "We craft high-performance websites using Next.js, React, and modern UI frameworks. From portfolio sites to full-stack SaaS dashboards — built for speed, SEO, and scale. We don't just make things look good; we make them convert.",
+    detail: '',
   },
   {
     num: '02',
-    title: 'Digital Experience Design',
-    tags: ['Web Design', 'UX & UI', 'Design Systems', 'App Design'],
+    title: 'Mobile App Development',
+    tags: ['iOS & Android', 'React Native', 'Flutter', 'UI/UX', 'App Store Publishing'],
     description:
-      'Digital products and websites built on the same thinking that drives our brand work. We design experiences that make complex systems feel simple, and simple brands feel substantial. Our process moves from strategy and UX architecture through detailed UI and a production-ready design system.',
-    detail:
-      'We hand off with Figma files that developers actually want to use, and we stay involved through build to make sure nothing gets lost in translation.',
+      'Cross-platform mobile apps built with React Native or Flutter. We handle everything — design, development, and deployment to both the App Store and Google Play. Apps your users will actually enjoy using.',
+    detail: '',
   },
   {
     num: '03',
-    title: 'Motion & Visual Systems',
-    tags: ['Motion Identity', 'Animation', 'Video', 'UI Motion'],
+    title: 'AI Solutions',
+    tags: ['Chatbots', 'LLM Integration', 'Recommendation Engines', 'AI Dashboards'],
     description:
-      'Motion is where static identity becomes kinetic brand personality. We develop motion identities that can operate at every scale — from a sub-second UI micro-interaction to a sixty-second broadcast ident. The logic is always the same: movement should feel like it belongs to the brand, not borrowed from a trends reel.',
-    detail:
-      'We deliver in After Effects, Rive, Lottie, and code-based animation for web environments.',
+      "From custom AI chatbots to full LLM integrations using OpenAI, Claude, and Gemini — we bring the power of AI directly into your product. Whether it's automating customer support or building intelligent dashboards, we make AI practical and accessible.",
+    detail: '',
   },
   {
     num: '04',
-    title: 'Campaign & Art Direction',
-    tags: ['Campaign Strategy', 'Art Direction', 'Photography', 'OOH', 'Social'],
+    title: 'AI Automation',
+    tags: ['Make', 'n8n', 'Zapier', 'CRM Automation', 'Data Pipelines', 'API Integration'],
     description:
-      'When brands need to say something specific — a launch, a repositioning, a cultural moment — we build the visual and conceptual world around that idea. We work from campaign strategy through creative concept, art direction, photography briefs, and final asset production across all formats.',
-    detail:
-      'We\'re experienced with OOH, digital display, editorial placement, and social-first formats that don\'t feel like afterthoughts.',
+      "We build automation pipelines that eliminate manual work — from lead generation to reporting. Using Make, n8n, Zapier, and custom APIs, we help businesses reclaim hours every week and scale without adding headcount.",
+    detail: '',
   },
   {
     num: '05',
-    title: 'Packaging & Print Design',
-    tags: ['Packaging', 'Print', 'Structural Design', 'Production'],
+    title: 'Digital Branding',
+    tags: ['Logo Design', 'Brand Identity', 'Style Guide', 'Social Assets', 'Pitch Decks'],
     description:
-      'Physical design that earns its place on a shelf, in a bag, or in someone\'s hand. We bring the same rigorous system thinking to packaging that we bring to digital — but add the tactile dimensions of material, texture, and production process. We work with print producers directly to make sure what we design actually gets made the way it was intended.',
-    detail:
-      'Experience across FMCG, spirits, food, beauty, and limited-edition collector formats.',
+      'We create visual identities that are distinctive, scalable, and on-brand — across every touchpoint. Logo, color system, typography, and a brand guide that makes everything future-consistent. Because your brand is the first thing people judge you on.',
+    detail: '',
   },
   {
     num: '06',
-    title: 'Content & Editorial Direction',
-    tags: ['Editorial Design', 'Content Strategy', 'Publication Design', 'Photography Direction'],
+    title: 'Consulting & Strategy',
+    tags: ['Digital Audit', 'Tech Stack Review', 'Growth Roadmap', 'AI Readiness'],
     description:
-      'For brands and institutions that publish — annual reports, magazines, books, research papers — we bring the same level of intentionality that book and magazine designers have refined over decades, applied with a contemporary eye. Great editorial design makes reading feel effortless and authoritative simultaneously.',
-    detail:
-      'We art-direct photography and illustration where needed, and work with writers to ensure copy and design are genuinely integrated, not in competition.',
+      "Not sure what you need? We'll audit your current digital setup and give you a clear, actionable roadmap. No fluff, no vague decks — just an honest assessment of where you are and exactly what to do next.",
+    detail: '',
   },
 ];
 
@@ -129,182 +112,128 @@ export const homeServicesList = services.map((s) => ({
 
 export const featuredProjects: Project[] = [
   {
-    title: 'Meridian Financial — Full Brand Overhaul',
-    category: 'Brand Identity',
-    year: '2024',
+    title: 'E-Commerce Platform — Full Stack Build',
+    category: 'Web Development',
+    year: '2025',
     description: '',
-    tags: ['Brand Identity'],
+    tags: ['Web Development'],
     image: 'https://picsum.photos/seed/Dimensity Labs01/900/507',
-    imageAlt: 'Meridian rebrand project',
+    imageAlt: 'E-commerce platform project',
     layout: 'featured',
   },
   {
-    title: 'Lumio — App Design & System',
-    category: 'Digital Product',
-    year: '2024',
+    title: 'AI Chatbot — Customer Support Automation',
+    category: 'AI Solutions',
+    year: '2025',
     description: '',
-    tags: ['Digital Design'],
+    tags: ['AI Solutions'],
     image: 'https://picsum.photos/seed/Dimensity Labs02/600/800',
-    imageAlt: 'Lumio app design',
+    imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
   {
-    title: 'Kova — Launch Campaign',
-    category: 'Campaign',
-    year: '2023',
+    title: 'FinTech Mobile App — React Native',
+    category: 'Mobile App',
+    year: '2025',
     description: '',
-    tags: ['Campaign'],
+    tags: ['Mobile App'],
     image: 'https://picsum.photos/seed/Dimensity Labs03/480/360',
-    imageAlt: 'Kova campaign',
+    imageAlt: 'FinTech mobile app project',
     layout: 'standard',
   },
   {
-    title: 'Palaver — Magazine Redesign',
-    category: 'Editorial',
-    year: '2022',
+    title: 'Workflow Automation — Lead Gen Pipeline',
+    category: 'AI Automation',
+    year: '2025',
     description: '',
-    tags: ['Typography'],
+    tags: ['AI Automation'],
     image: 'https://picsum.photos/seed/Dimensity Labs04/480/360',
-    imageAlt: 'Palaver editorial project',
+    imageAlt: 'Workflow automation project',
     layout: 'standard',
   },
   {
-    title: 'Verdant Group — Corporate Site',
-    category: 'Web Design',
-    year: '2022',
+    title: 'Brand Identity — SaaS Startup',
+    category: 'Branding',
+    year: '2025',
     description: '',
-    tags: ['Web Design'],
+    tags: ['Branding'],
     image: 'https://picsum.photos/seed/Dimensity Labs05/480/360',
-    imageAlt: 'Verdant website',
+    imageAlt: 'Brand identity project',
     layout: 'standard',
   },
 ];
 
 export const allProjects: Project[] = [
   {
-    title: 'Meridian Financial — Complete Brand Overhaul',
-    category: 'Brand Identity',
-    year: '2024',
+    title: 'E-Commerce Platform — Full Stack Build',
+    category: 'Web Development',
+    year: '2025',
     description:
-      'A legacy wealth management firm repositioning for a new generation of clients. We rebuilt everything: naming, visual identity, tone of voice, and digital experience — anchored by a typographic system that communicates authority without coldness.',
-    tags: ['Brand Identity', 'Strategy', 'Web Design'],
+      'A complete e-commerce store built with Next.js, Stripe payments, and a headless CMS. Mobile-first, fast, and conversion-optimised.',
+    tags: ['Web Development'],
     image: 'https://picsum.photos/seed/case01/1200/750',
-    imageAlt: 'Meridian Financial brand identity project',
+    imageAlt: 'E-commerce platform project',
     layout: 'featured',
-    award: 'D&AD Shortlist',
   },
   {
-    title: 'Lumio — Smart Home App & Design System',
-    category: 'Digital Product',
-    year: '2024',
+    title: 'AI Chatbot — Customer Support Automation',
+    category: 'AI Solutions',
+    year: '2025',
     description:
-      'From naming and identity through to a full Figma design system and shipped iOS app. A product that needed to feel intuitive for people who\'ve never considered smart home technology.',
-    tags: ['UX Design', 'Design System'],
+      'A custom LLM-powered chatbot trained on client documentation, reducing support tickets by 60%.',
+    tags: ['AI Solutions'],
     image: 'https://picsum.photos/seed/case02/600/800',
-    imageAlt: 'Lumio app design',
+    imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
   {
-    title: 'Noctua Health — Sleep Tech Brand System',
-    category: 'Brand Identity',
-    year: '2023',
+    title: 'FinTech Mobile App — React Native',
+    category: 'Mobile App',
+    year: '2025',
     description:
-      'A sleep technology startup entering a crowded market. The identity needed to signal scientific credibility while feeling genuinely calm and reassuring — a rare combination in health tech.',
-    tags: ['Brand Identity', 'Packaging'],
+      'Cross-platform personal finance tracker built with React Native. Available on iOS and Android.',
+    tags: ['Mobile App'],
     image: 'https://picsum.photos/seed/case03/600/800',
-    imageAlt: 'Noctua Health branding',
+    imageAlt: 'Mobile app project',
     layout: 'standard',
   },
   {
-    title: 'Drystone Capital — Investment Brand & Site',
-    category: 'Brand Identity + Web',
-    year: '2023',
+    title: 'Workflow Automation — Lead Gen Pipeline',
+    category: 'AI Automation',
+    year: '2025',
     description:
-      'A boutique private equity firm with serious ambitions needed an identity that matched. We developed a restrained typographic system, a subdued palette, and a website built on considered silence.',
-    tags: ['Brand', 'Web Design', 'Strategy'],
+      'Make.com automation pipeline connecting CRM, email, and Slack — saving 20+ hours per week.',
+    tags: ['AI Automation'],
     image: 'https://picsum.photos/seed/case04/900/563',
-    imageAlt: 'Drystone Capital brand work',
+    imageAlt: 'Automation pipeline project',
     layout: 'wide',
   },
   {
-    title: 'Kova Systems — Product Launch Campaign',
-    category: 'Campaign',
-    year: '2023',
+    title: 'Brand Identity — SaaS Startup',
+    category: 'Branding',
+    year: '2025',
     description:
-      'A B2B SaaS company launching its first consumer-facing product needed a campaign with genuine emotional pull. We built a visual world from scratch — art direction, photography, OOH, and digital — in twelve weeks.',
-    tags: ['Campaign', 'Art Direction', 'Motion'],
+      'Logo, colour system, typography, and a complete brand guide for a growing B2B SaaS product.',
+    tags: ['Branding'],
     image: 'https://picsum.photos/seed/case05/900/563',
-    imageAlt: 'Kova Systems campaign',
-    layout: 'wide',
-  },
-  {
-    title: 'Palaver — Magazine Complete Redesign',
-    category: 'Editorial Design',
-    year: '2022',
-    description:
-      'A quarterly cultural magazine that had been operating since the nineties needed to reconcile its storied editorial reputation with the visual expectations of a contemporary readership. We rebuilt the grid, the typeface system, and the cover formula — while keeping its essential character intact.',
-    tags: ['Editorial', 'Typography'],
-    image: 'https://picsum.photos/seed/case06/1200/750',
-    imageAlt: 'Palaver magazine redesign',
-    layout: 'featured',
-    award: 'SND Award',
-  },
-  {
-    title: 'Ashford & Co — Spirits Range Packaging',
-    category: 'Packaging',
-    year: '2022',
-    description:
-      'A premium gin distillery launching three new expressions needed packaging that could command shelf presence in international markets without relying on category clichés.',
-    tags: ['Packaging', 'Print'],
-    image: 'https://picsum.photos/seed/case07/600/800',
-    imageAlt: 'Ashford and Co packaging',
-    layout: 'standard',
-  },
-  {
-    title: 'The Verdant Group — Corporate Website',
-    category: 'Web Design',
-    year: '2022',
-    description:
-      'A global sustainability consultancy needed a digital presence that matched the gravity and ambition of its work. We designed a website that navigates complexity without simplifying it.',
-    tags: ['Web Design', 'UX'],
-    image: 'https://picsum.photos/seed/case08/600/800',
-    imageAlt: 'Verdant Group website',
-    layout: 'standard',
-  },
-  {
-    title: 'Hallmark Broadcast — Motion Identity System',
-    category: 'Motion & Identity',
-    year: '2021',
-    description:
-      'A European broadcast network undergoing digital transition needed a motion identity system that could span linear TV, streaming, and social. We delivered 200+ assets built on a single kinetic logic.',
-    tags: ['Motion Design', 'Brand Identity'],
-    image: 'https://picsum.photos/seed/case09/900/563',
-    imageAlt: 'Hallmark motion graphics',
-    layout: 'wide',
-    award: 'Broadcast Award',
-  },
-  {
-    title: 'Fold Architecture — Studio Identity & Website',
-    category: 'Brand Identity',
-    year: '2021',
-    description:
-      'An architecture practice whose conceptual approach to space deserved an identity with equivalent rigour. We developed a system derived from the logic of the fold — dynamic, structural, and impossible to ignore.',
-    tags: ['Brand Identity', 'Web Design'],
-    image: 'https://picsum.photos/seed/case10/900/563',
-    imageAlt: 'Fold architecture studio',
+    imageAlt: 'Brand identity project',
     layout: 'wide',
   },
 ];
 
 export const teamMembers: TeamMember[] = [
-  { name: 'Maren Haugen', role: 'Co-Founder & Creative Director', image: 'https://picsum.photos/seed/person1/400/533' },
-  { name: 'Tobias Eld', role: 'Co-Founder & Strategy Director', image: 'https://picsum.photos/seed/person2/400/533' },
-  { name: 'Sienna Park', role: 'Head of Digital Design', image: 'https://picsum.photos/seed/person3/400/533' },
-  { name: 'Raúl Montoya', role: 'Senior Motion Designer', image: 'https://picsum.photos/seed/person4/400/533' },
-  { name: 'Astrid Voss', role: 'Brand Strategist', image: 'https://picsum.photos/seed/person5/400/533' },
-  { name: 'Jin-ho Lim', role: 'Typography Lead', image: 'https://picsum.photos/seed/person6/400/533' },
-  { name: 'Clara Fenwick', role: 'UX & Interaction Designer', image: 'https://picsum.photos/seed/person7/400/533' },
-  { name: 'Marcus Dahl', role: 'Art Director', image: 'https://picsum.photos/seed/person8/400/533' },
+  {
+    name: '[Your Name]',
+    role: 'Founder & CEO',
+    bio: 'Designer, developer, and AI enthusiast. Building Dimensity Labs to bridge the gap between great ideas and great digital products.',
+    image: 'https://picsum.photos/seed/founder/400/533',
+  },
+  {
+    name: "We're Growing 🚀",
+    role: 'Interested in working together? Reach out.',
+    href: '/contact',
+    image: 'https://picsum.photos/seed/growing/400/533',
+  },
 ];
 
 export const values: Value[] = [
@@ -312,19 +241,19 @@ export const values: Value[] = [
     icon: '◉',
     title: 'Clarity over Cleverness',
     description:
-      'The most sophisticated thing design can do is make a complex idea feel instantly obvious. We resist the temptation to be clever at the expense of being clear.',
+      "We build things that are easy to use, easy to understand, and easy to scale. We don't over-engineer for the sake of it.",
   },
   {
     icon: '⟳',
     title: 'Systems Thinking',
     description:
-      'We never design a single touchpoint in isolation. Every mark, colour, and word belongs to a larger system. That system is the real deliverable.',
+      'Every product we build is designed to grow with you. We think in systems, not one-off solutions.',
   },
   {
     icon: '◈',
     title: 'Radical Honesty',
     description:
-      "We tell clients what we genuinely think, even when it's uncomfortable. The most useful thing we can offer isn't agreement — it's a perspective unclouded by internal politics.",
+      "We tell you what we think — even when it's not what you want to hear. Honest feedback is how we protect your investment.",
   },
   {
     icon: '◤',
@@ -348,28 +277,28 @@ export const values: Value[] = [
 
 export const timeline: TimelineEvent[] = [
   {
-    year: '2016',
-    title: 'Founded in a rented flat in Grünerløkka',
+    year: '2025',
+    title: 'The Idea',
     description:
-      'Maren Haugen and Tobias Eld left their positions at a Stockholm agency to start something smaller, stranger, and more their own. The first three months were funded by one bold packaging client who took a chance on an unknown studio. That project won a D&AD pencil. The calls started coming.',
+      'Dimensity Labs started with a simple belief: most businesses deserve better digital tools than what they have. It began as a one-person studio with a laptop, a strong coffee habit, and a genuine obsession with technology.',
   },
   {
-    year: '2018',
-    title: 'The team grows to six; we move into our first proper studio',
+    year: '2025',
+    title: 'First Clients',
     description:
-      "We brought in our first senior motion designer, a brand strategist who'd spent a decade in New York, and two visual designers from the Copenhagen design scene. The culture was set early: no hierarchy of disciplines — every voice shapes every project.",
+      'We took on our first real clients — small businesses and startups who needed websites, automation, and digital help. Every project taught us something new. Every client became a case study.',
   },
   {
-    year: '2021',
-    title: 'First international clients; digital work takes centre stage',
+    year: '2025',
+    title: 'Going Full-Service',
     description:
-      'The pandemic changed what clients needed. Print paused; digital accelerated. We invested heavily in interaction and digital product design, bringing our brand systems thinking into the screen. The result was a new hybrid approach that\'s since defined our practice.',
+      "We expanded from web design to mobile apps, AI solutions, and automation pipelines. One roof. Every digital need. That's when Dimensity Labs became what it is today.",
   },
   {
     year: 'Now',
-    title: "Twelve people, a full-floor studio, and a waiting list we're proud of",
+    title: 'Now — Growing Fast',
     description:
-      "We now take on approximately 18 projects per year — deliberately fewer than we could. The constraint keeps our standards uncomfortably high and our thinking genuinely fresh. We're currently booking for Q2 2026.",
+      "We're actively growing — taking on new projects, expanding our service offering, and building the team. If you're reading this, you're early. That's a good thing.",
   },
 ];
 
@@ -378,105 +307,103 @@ export const processSteps: ProcessStep[] = [
     num: '01',
     title: 'Discovery & Immersion',
     description:
-      "We start by listening — properly. Two to three weeks of stakeholder interviews, competitive analysis, audience research, and honest audit of where things currently stand. We don't start designing until we understand the territory.",
+      'We start with a discovery call to understand your business, goals, and constraints. No assumptions — just listening.',
   },
   {
     num: '02',
     title: 'Strategy & Direction',
     description:
-      'A strategic brief that defines positioning, personality, and creative direction. This becomes the filter for every design decision that follows. We present it, debate it with you, and refine it until it\'s genuinely yours.',
+      'We map out the project scope, timeline, and deliverables. You get a clear plan before any work begins.',
   },
   {
     num: '03',
     title: 'Design & Develop',
     description:
-      "We typically develop two distinct creative directions — not variations on a theme. We present them in working sessions, not polished pitch decks. The most interesting conversations happen when the work is still pliable.",
+      'We build fast and iterate faster. Regular check-ins keep you in the loop, and nothing ships without your sign-off.',
   },
   {
     num: '04',
     title: 'Refine & Deliver',
     description:
-      'Chosen direction refined through two rounds of collaborative feedback. Final delivery includes a comprehensive system guide, all source files, and a handover call. We remain available for questions in the 30 days that follow.',
+      'Final delivery with all source files, documentation, and a handover walkthrough. Plus 14 days of post-launch support.',
   },
 ];
 
 export const pricingTiers: PricingTier[] = [
   {
-    tier: 'Foundation',
-    price: '€18k',
+    tier: 'Starter',
+    price: '₹25,000',
     period: '/ project',
-    description: 'For startups and early-stage brands establishing their identity for the first time.',
+    description: 'For individuals and early-stage startups who need a fast, professional web presence.',
     features: [
-      'Brand strategy document',
-      'Visual identity system (logo, colour, type)',
-      'Brand voice & tone guidelines',
-      'Core brand guidelines (PDF + Figma)',
-      'Two creative directions explored',
-      'Two rounds of refinements',
-      '30-day post-handover support',
+      'Landing Page Design',
+      'Mobile Responsive',
+      'Basic SEO Setup',
+      'Contact Form Integration',
+      '2 Revision Rounds',
+      '7-day Delivery',
+      '14-day Post-Launch Support',
     ],
     featured: false,
-    ctaLabel: 'Enquire About Foundation',
+    ctaLabel: 'Enquire About Starter',
   },
   {
-    tier: 'System',
-    price: '€42k',
+    tier: 'Growth',
+    price: '₹75,000',
     period: '/ project',
-    description: 'A complete brand and digital build for companies ready to make a serious market statement.',
+    description: 'For growing businesses that need a full website or app with advanced features.',
     features: [
-      'Everything in Foundation, plus:',
-      'Extended visual identity system',
-      'Motion identity & animation principles',
-      'Website design (up to 12 templates)',
-      'Design system & component library',
-      'Photography art direction brief',
-      'Iconography & illustration style guide',
-      'Three rounds of refinements',
-      '60-day post-handover support',
+      'Full Website (up to 8 pages)',
+      'CMS Integration',
+      'SEO Optimization',
+      'Contact Form + Email Notification Setup',
+      '3 Revision Rounds',
+      'Performance Optimization',
+      '14-day Delivery',
+      '30-day Post-Launch Support',
     ],
     featured: true,
     badge: 'Most Common',
-    ctaLabel: 'Enquire About System',
+    ctaLabel: 'Enquire About Growth',
   },
   {
-    tier: 'Enterprise',
-    price: 'Custom',
-    description: 'For established organisations undertaking major transformations or multi-brand architecture projects.',
+    tier: 'Custom',
+    price: "Let's Talk",
+    description: 'For businesses needing AI solutions, mobile apps, automations, or large-scale digital builds.',
     features: [
-      'Everything in System, plus:',
-      'Multi-brand architecture strategy',
-      'Campaign creative development',
-      'Packaging design (multiple SKUs)',
-      'Editorial & content system',
-      'Internal brand training workshops',
-      'Dedicated account team',
-      'Ongoing retainer available',
+      'Everything in Growth, plus:',
+      'AI Integration (Chatbot / Automation)',
+      'Mobile App Development',
+      'Custom Automation Pipeline',
+      'Dedicated Project Manager',
+      'Priority Support',
+      'Custom Timeline',
     ],
     featured: false,
-    ctaLabel: 'Start a Conversation',
+    ctaLabel: "Let's Talk",
   },
 ];
 
 export const faqs: FAQ[] = [
   {
-    question: 'How far in advance do you book?',
+    question: 'How long does a project take?',
     answer:
-      "We're typically 6–10 weeks out. We're currently booking projects beginning in Q2 2026. If you have a tighter deadline, reach out and we'll be honest about whether we can make it work.",
+      "Depends on scope. A landing page: 3–7 days. A full website: 2–4 weeks. An AI solution: 1–3 weeks. We'll give you a clear timeline before we start.",
   },
   {
-    question: "What's the minimum project budget?",
+    question: "What's your minimum project cost?",
     answer:
-      "Our smallest projects start at €14,000. Below that threshold, it's genuinely difficult for us to do work we're proud of. If your budget is smaller, we'll try to point you toward studios who do excellent work at that scale.",
+      "Our smallest projects start at ₹15,000. We're flexible — reach out and we'll find something that works for your budget.",
   },
   {
     question: 'Do you work with international clients?',
     answer:
-      "Approximately 60% of our current clients are outside Norway. We work across time zones and have experience with clients in North America, the UK, the rest of Europe, and Southeast Asia. Remote collaboration is something we've refined to a genuine process, not a workaround.",
+      "Absolutely. We work with clients across India, the US, the UK, the Middle East, and beyond. We're remote-first and used to working across time zones.",
   },
   {
     question: 'Do you offer ongoing retainer work?',
     answer:
-      "Yes, for clients we've completed a major project with. We offer creative retainer arrangements that give you regular, prioritised access to the team for ongoing brand management and new creative work. Ask us about the details.",
+      "Yes. Once we've completed a project together, we offer monthly retainer packages for ongoing work, updates, and support.",
   },
   {
     question: "What if I'm not sure what I need?",
@@ -487,35 +414,25 @@ export const faqs: FAQ[] = [
 
 export const offices: Office[] = [
   {
-    city: 'Oslo',
+    city: 'Mumbai, India',
     badge: 'HQ',
     badgeAccent: true,
-    address: 'Thorvald Meyers gate 12\n0555 Grünerløkka\nOslo, Norway',
-    status: 'Studio open Mon–Fri, 09:00–18:00 CET',
-    active: true,
-  },
-  {
-    city: 'London',
-    badge: 'Partner Office',
-    badgeAccent: false,
-    address: 'The Hoxton, Southwark\n40 Blackfriars Road\nLondon SE1 8NY, UK',
-    status: 'Client meetings by appointment',
+    address: 'Maharashtra, India',
+    status: 'Remote-first. Available across time zones.',
     active: true,
   },
   {
     city: 'Worldwide',
     badge: 'Remote',
     badgeAccent: false,
-    address: "We've delivered projects across 18 countries. Remote collaboration is native to how we work — not a compromise.",
+    address: "We work with clients globally — India, US, UK, Middle East, and beyond. Remote-first, always.",
     status: 'Available across time zones',
     active: true,
   },
 ];
 
 export const contactEmails: ContactEmail[] = [
-  { label: 'New Business', email: 'hello@Dimensity Labsstudio.com' },
-  { label: 'For Press & Speaking', email: 'press@Dimensity Labsstudio.com' },
-  { label: 'Careers', email: 'careers@Dimensity Labsstudio.com' },
+  { label: 'New Business', email: 'hello@dimensitylabs.com' },
 ];
 
 export const socialLinks = [
@@ -526,37 +443,36 @@ export const socialLinks = [
   { label: 'Behance', abbr: 'BE', href: '#' },
 ];
 
+export const awardsLabels: string[] = [
+  'Next.js',
+  'React',
+  'React Native',
+  'n8n',
+  'Stripe',
+];
+
 export const serviceOptions = [
   { value: '', label: 'Select a service...' },
-  { value: 'brand-identity', label: 'Brand Identity & Strategy' },
-  { value: 'digital-design', label: 'Digital Experience Design' },
-  { value: 'motion', label: 'Motion & Visual Systems' },
-  { value: 'campaign', label: 'Campaign & Art Direction' },
-  { value: 'packaging', label: 'Packaging & Print' },
-  { value: 'editorial', label: 'Content & Editorial Direction' },
+  { value: 'web', label: 'Web Design & Development' },
+  { value: 'mobile', label: 'Mobile App Development' },
+  { value: 'ai', label: 'AI Solutions' },
+  { value: 'automation', label: 'AI Automation' },
+  { value: 'branding', label: 'Digital Branding' },
+  { value: 'consulting', label: 'Consulting & Strategy' },
   { value: 'not-sure', label: "Not sure yet — let's talk" },
 ];
 
 export const budgetOptions = [
   { value: '', label: 'Select a range...' },
-  { value: 'under-15k', label: 'Under €15,000' },
-  { value: '15-30k', label: '€15,000 – €30,000' },
-  { value: '30-60k', label: '€30,000 – €60,000' },
-  { value: '60-100k', label: '€60,000 – €100,000' },
-  { value: 'over-100k', label: 'Over €100,000' },
-  { value: 'not-sure', label: 'Not sure yet' },
+  { value: 'under-25k', label: 'Under ₹25,000' },
+  { value: '25-75k', label: '₹25,000 – ₹75,000' },
+  { value: '75-200k', label: '₹75,000 – ₹2,00,000' },
+  { value: '200k-plus', label: '₹2,00,000+' },
+  { value: 'not-sure', label: "Not sure — let's discuss" },
 ];
 
 export const testimonial: Testimonial = {
-  quote:
-    'Good design is indistinguishable from the right idea, expressed at the right moment, in the right form.',
-  attribution: '— Dimensity Labs Labs Manifesto, 2016',
+  quote: "We don't just build websites. We build digital businesses.",
+  attribution: '— Dimensity Labs, 2025',
 };
 
-export const awardsLabels: string[] = [
-  'D&AD Pencil',
-  'Cannes Lions',
-  'SND Award',
-  'Awwwards SOTD',
-  'Red Dot',
-];
