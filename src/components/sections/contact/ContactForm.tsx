@@ -78,15 +78,31 @@ export function ContactForm({
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    
+    // Client-side validation
+    if (!form.name || !form.email || !form.message) {
+      setStatus('error');
+      return;
+    }
+
     setStatus('submitting');
 
-    // Simulate network delay
-    await new Promise((resolve) => setTimeout(resolve, 1800));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
 
-    // In production, replace with an actual API call
-    if (form.name && form.email && form.message) {
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setStatus('success');
-    } else {
+    } catch (err) {
+      console.error(err);
       setStatus('error');
     }
   }
