@@ -159,8 +159,6 @@ export function ContactForm({
         </div>
       )}
 
-
-    <AnimatedSection as="div" className="contact-form-wrap" delay={0.1}>
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className="form-row">
           <div className="form-group form-field">
