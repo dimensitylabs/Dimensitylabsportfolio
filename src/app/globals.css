@@ -2650,3 +2650,55 @@ textarea {
   will-change: transform;
   transform-origin: center center;
 }
+
+/* ── Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 14, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  animation: fade-in 0.3s forwards;
+  padding: var(--sp-md);
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-2xl) var(--sp-lg);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fade-up 0.4s 0.1s forwards;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--sp-md);
+  right: var(--sp-md);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid var(--clr-border);
+}
+
+.modal-close:hover {
+  background: var(--clr-dark);
+  color: var(--clr-white);
+}

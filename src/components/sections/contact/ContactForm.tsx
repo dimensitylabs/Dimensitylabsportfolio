@@ -116,32 +116,50 @@ export function ContactForm({
     }
   }
 
-  if (status === 'success') {
-    return (
-      <AnimatedSection as="div" className="contact-form-wrap">
-        <div style={{ textAlign: 'center', padding: 'var(--sp-2xl) var(--sp-xl)' }}>
-          <span style={{ fontSize: '3rem', display: 'block', marginBottom: 'var(--sp-md)' }}>✓</span>
-          <h3
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.75rem',
-              fontWeight: 700,
-              color: 'var(--clr-ink)',
-              marginBottom: '12px',
-            }}
-          >
-            Message Sent
-          </h3>
-          <p style={{ color: 'var(--clr-ink-mid)', lineHeight: 1.6, maxWidth: '380px', margin: '0 auto' }}>
-            Thank you, {form.name}. We&apos;ll review your enquiry and respond
-            within two business days.
-          </p>
-        </div>
-      </AnimatedSection>
-    );
+  function handleCloseModal() {
+    setStatus('idle');
+    setForm((prev) => ({
+      ...prev,
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+      // keeping service and budget inferred if previously set, or we could reset completely.
+    }));
   }
 
   return (
+    <AnimatedSection as="div" className="contact-form-wrap" delay={0.1}>
+      {status === 'success' && (
+        <div className="modal-backdrop" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={handleCloseModal} aria-label="Close modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <span style={{ fontSize: '3rem', display: 'block', marginBottom: 'var(--sp-md)' }}>✓</span>
+            <h3
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.75rem',
+                fontWeight: 700,
+                color: 'var(--clr-ink)',
+                marginBottom: '12px',
+              }}
+            >
+              Message Sent
+            </h3>
+            <p style={{ color: 'var(--clr-ink-mid)', lineHeight: 1.6, maxWidth: '380px', margin: '0 auto', marginBottom: 'var(--sp-lg)' }}>
+              Thank you, {form.name}. We&apos;ll review your enquiry and respond
+              within two business days.
+            </p>
+            <Button onClick={handleCloseModal} variant="primary">
+              Done
+            </Button>
+          </div>
+        </div>
+      )}
+
+
     <AnimatedSection as="div" className="contact-form-wrap" delay={0.1}>
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className="form-row">
@@ -272,6 +290,7 @@ export function ContactForm({
             We typically respond within 2 business days.
           </span>
           <Button
+            type="submit"
             variant="primary"
             className="submit-btn"
             disabled={status === 'submitting'}
