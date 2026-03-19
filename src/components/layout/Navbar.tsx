@@ -30,7 +30,7 @@ export function Navbar() {
     const entranceTween = gsap.fromTo(
       nav,
       { y: -80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.5 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.5, clearProps: 'y,opacity' },
     );
 
     const shrinkTrigger = ScrollTrigger.create({
@@ -43,7 +43,7 @@ export function Navbar() {
           backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
           borderBottomColor: isScrolled ? 'var(--nav-border)' : 'transparent',
           duration: 0.3,
-          overwrite: true,
+          overwrite: 'auto',
         });
       },
     });
@@ -54,11 +54,11 @@ export function Navbar() {
     const links = Array.from(nav.querySelectorAll<HTMLElement>('a'));
     const onEnter = (e: Event) => {
       const el = e.currentTarget as HTMLElement;
-      gsap.to(el, { y: -2, duration: 0.2, ease: 'power2.out', overwrite: true });
+      gsap.to(el, { y: -2, duration: 0.2, ease: 'power2.out', overwrite: 'auto' });
     };
     const onLeave = (e: Event) => {
       const el = e.currentTarget as HTMLElement;
-      gsap.to(el, { y: 0, duration: 0.3, ease: 'elastic.out(1, 0.6)', overwrite: true });
+      gsap.to(el, { y: 0, duration: 0.3, ease: 'elastic.out(1, 0.6)', overwrite: 'auto' });
     };
     links.forEach((link) => {
       link.addEventListener('mouseenter', onEnter);

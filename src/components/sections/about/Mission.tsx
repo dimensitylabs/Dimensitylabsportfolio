@@ -96,7 +96,7 @@ export function Mission() {
                 <AnimatedSection
                   as="div"
                   className="timeline-item"
-                  key={event.year}
+                  key={`${event.year}-${i}`}
                   delay={i * 0.1}
                   style={{
                     paddingBlock: 'var(--sp-xl)',

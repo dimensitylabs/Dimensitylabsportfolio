@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 import { gsap } from "@/lib/gsap";
 
 export default function CustomCursor() {
@@ -8,6 +9,38 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 0, y: 0 });
   const isTouch = useRef(false);
+  const { resolvedTheme } = useTheme();
+
+  // Update cursor colours when theme changes
+  useEffect(() => {
+    const dot = dotRef.current;
+    const ring = ringRef.current;
+    if (!dot || !ring || isTouch.current) return;
+
+    const isDark = resolvedTheme === "dark";
+
+    // Transition dot appearance
+    gsap.to(dot, {
+      boxShadow: isDark
+        ? "0 0 6px rgba(198,241,53,0.6), 0 0 20px rgba(198,241,53,0.25)"
+        : "none",
+      duration: 0.35,
+      ease: "power2.out",
+    });
+    // Removed dot.style.mixBlendMode = ... to keep it visible over all stacking contexts
+
+    // Transition ring appearance
+    gsap.to(ring, {
+      borderColor: isDark
+        ? "rgba(198,241,53,0.45)"
+        : "var(--clr-ink)",
+      boxShadow: isDark
+        ? "0 0 12px rgba(198,241,53,0.1)"
+        : "none",
+      duration: 0.35,
+      ease: "power2.out",
+    });
+  }, [resolvedTheme]);
 
   useEffect(() => {
     const dot = dotRef.current;
@@ -28,6 +61,13 @@ export default function CustomCursor() {
     checkTouch();
     window.addEventListener("resize", checkTouch);
 
+    // Helper: get the default ring border based on current theme
+    const getDefaultRingBorder = () => {
+      return document.documentElement.classList.contains("dark")
+        ? "rgba(198,241,53,0.45)"
+        : "var(--clr-ink)";
+    };
+
     // Move handler
     const onMouseMove = (e: MouseEvent) => {
       if (isTouch.current) return;
@@ -37,18 +77,20 @@ export default function CustomCursor() {
       gsap.to(dot, {
         x: e.clientX,
         y: e.clientY,
+        z: 9999, // Force front
         duration: 0.08,
         ease: "power2.out",
-        overwrite: true,
+        overwrite: "auto",
       });
 
       // Ring follows with slight lag
       gsap.to(ring, {
         x: e.clientX,
         y: e.clientY,
+        z: 9998, // Just behind dot
         duration: 0.25,
         ease: "power2.out",
-        overwrite: true,
+        overwrite: "auto",
       });
     };
 
@@ -73,7 +115,7 @@ export default function CustomCursor() {
     const onLeaveInteractive = () => {
       gsap.to(ring, {
         scale: 1,
-        borderColor: "var(--clr-ink)",
+        borderColor: getDefaultRingBorder(),
         duration: 0.3,
         ease: "power2.out",
       });
@@ -94,7 +136,7 @@ export default function CustomCursor() {
     const onLeaveCard = () => {
       gsap.to(ring, {
         scale: 1,
-        borderColor: "var(--clr-ink)",
+        borderColor: getDefaultRingBorder(),
         backgroundColor: "transparent",
         duration: 0.3,
         ease: "power2.out",
