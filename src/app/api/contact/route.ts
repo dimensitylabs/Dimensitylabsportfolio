@@ -3,8 +3,45 @@ import dbConnect from '@/lib/mongoose';
 import Contact from '@/models/Contact';
 import nodemailer from 'nodemailer';
 
+// --- Rate Limiting Setup ---
+// Simple in-memory store for rate limiting (Note: resets on server restart or serverless cold starts)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS_PER_WINDOW = 3;
+
+function getRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  if (!record) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+    return true; // Allowed
+  }
+
+  if (now > record.resetTime) {
+    record.count = 1;
+    record.resetTime = now + RATE_LIMIT_WINDOW_MS;
+    return true; // Allowed (window reset)
+  }
+
+  if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+    return false; // Rate limited
+  }
+
+  record.count++;
+  return true; // Allowed
+}
+
 export async function POST(req: Request) {
   try {
+    // 0. Rate Limiting Check
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown-ip';
+    if (!getRateLimit(ip)) {
+      return NextResponse.json(
+        { message: 'Too many requests. Please try again after 15 minutes.' },
+        { status: 429 } // 429 Too Many Requests
+      );
+    }
     const body = await req.json();
     const { name, email, company, service, budget, message } = body;
 

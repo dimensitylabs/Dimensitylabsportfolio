@@ -15,7 +15,7 @@ interface FormState {
   message: string;
 }
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Status = 'idle' | 'submitting' | 'success' | 'error' | 'rate_limited';
 
 const calculatorServiceToContactService: Record<string, string> = {
   landing: 'web',
@@ -74,6 +74,10 @@ export function ContactForm({
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    // Reset status if user starts typing again after an error
+    if (status === 'error' || status === 'rate_limited') {
+      setStatus('idle');
+    }
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -95,6 +99,11 @@ export function ContactForm({
         },
         body: JSON.stringify(form),
       });
+
+      if (response.status === 429) {
+        setStatus('rate_limited');
+        return;
+      }
 
       if (!response.ok) {
         throw new Error('Failed to submit form');
@@ -272,7 +281,7 @@ export function ContactForm({
           </Button>
         </div>
 
-        {status === 'error' && (
+        {(status === 'error' || status === 'rate_limited') && (
           <p
             role="alert"
             style={{
@@ -282,7 +291,9 @@ export function ContactForm({
               fontWeight: 600,
             }}
           >
-            Please fill in all required fields and try again.
+            {status === 'rate_limited' 
+              ? 'You have sent too many requests. Please wait a few minutes and try again.'
+              : 'Please fill in all required fields and try again.'}
           </p>
         )}
       </form>
