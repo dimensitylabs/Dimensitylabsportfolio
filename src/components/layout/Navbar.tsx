@@ -3,23 +3,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { navLinks } from '@/lib/data';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 20);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -43,16 +34,22 @@ export function Navbar() {
     );
 
     const shrinkTrigger = ScrollTrigger.create({
-      start: 'top -80',
+      start: 'top -10',
       end: 99999,
       onUpdate: (self) => {
-        if (self.direction === 1) {
-          gsap.to(nav, { y: -10, opacity: 0.92, duration: 0.3, ease: 'power2.out', overwrite: true });
-        } else {
-          gsap.to(nav, { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', overwrite: true });
-        }
+        const isScrolled = self.scroll() > 50;
+        nav.classList.toggle('scrolled', self.scroll() > 20);
+        gsap.to(nav, {
+          backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
+          borderBottomColor: isScrolled ? 'var(--nav-border)' : 'transparent',
+          duration: 0.3,
+          overwrite: true,
+        });
       },
     });
+
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', handleLoad);
 
     const links = Array.from(nav.querySelectorAll<HTMLElement>('a'));
     const onEnter = (e: Event) => {
@@ -75,12 +72,13 @@ export function Navbar() {
       });
       shrinkTrigger.kill();
       entranceTween.kill();
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
   return (
     <header>
-      <nav className={`site-nav${scrolled ? ' scrolled' : ''}`}>
+      <nav className="site-nav">
         <div className="container">
           <Link href="/" className="nav-logo" aria-label="Dimensity Labs Home">
             <span className="nav-logo-dot" />
@@ -100,10 +98,13 @@ export function Navbar() {
             ))}
           </ul>
 
-          <Link href="/contact" className="btn btn--primary nav-cta">
-            Start a Project
-            <span>→</span>
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <ThemeToggle />
+            <Link href="/contact" className="btn btn--primary nav-cta">
+              Start a Project
+              <span>→</span>
+            </Link>
+          </div>
 
           <button
             className={`hamburger-btn${mobileOpen ? ' open' : ''}`}

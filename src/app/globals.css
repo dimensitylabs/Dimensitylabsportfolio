@@ -1,7 +1,6 @@
 /* src/app/globals.css */
 @import "tailwindcss";
 
-/* ── Custom Properties ── */
 :root {
   --clr-bg: #F5F0E8;
   --clr-surface: #EDE8DF;
@@ -14,6 +13,40 @@
   --clr-dark-2: #1E1E1B;
   --clr-border: rgba(14,14,14,0.12);
   --clr-white: #FDFAF4;
+
+  --bg-primary: var(--clr-bg);
+  --bg-secondary: var(--clr-surface);
+  --bg-tertiary: var(--clr-white);
+  --bg-card: var(--clr-surface);
+  --bg-card-hover: var(--clr-white);
+  --bg-glass: rgba(245,240,232,0.88);
+
+  --text-primary: var(--clr-ink);
+  --text-secondary: var(--clr-ink-mid);
+  --text-tertiary: var(--clr-muted);
+  --text-accent: var(--clr-accent-dk);
+  --text-error: #d94444;
+
+  --accent-primary: var(--clr-accent-dk);
+  --accent-secondary: var(--clr-accent);
+  --accent-gradient: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accent-dk) 100%);
+
+  --border-subtle: var(--clr-border);
+  --border-default: var(--clr-border);
+  --border-strong: rgba(14,14,14,0.32);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 32px 80px rgba(0,0,0,0.45);
+  --shadow-glow: 0 0 40px rgba(198, 241, 53, 0.18);
+
+  --nav-bg: rgba(245,240,232,0.88);
+  --nav-bg-scrolled: rgba(245,240,232,0.98);
+  --nav-hover-bg: rgba(14,14,14,0.06);
+  --nav-border: var(--clr-border);
+
+  --toggle-bg: rgba(14,14,14,0.06);
+  --toggle-icon: var(--clr-ink);
 
   --sp-xs: 4px;
   --sp-sm: 8px;
@@ -32,6 +65,61 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 0.35s;
   --dur-fast: 0.18s;
+
+  color-scheme: light;
+}
+
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  --clr-bg: #050508;
+  --clr-surface: #0d0d14;
+  --clr-ink: #ffffff;
+  --clr-ink-mid: #a0a0b0;
+  --clr-muted: #5a5a72;
+  --clr-accent: #C6F135;
+  --clr-accent-dk: #9DC400;
+  --clr-dark: #050508;
+  --clr-dark-2: #13131e;
+  --clr-border: rgba(255,255,255,0.10);
+  --clr-white: #ffffff;
+
+  --bg-primary: var(--clr-bg);
+  --bg-secondary: var(--clr-surface);
+  --bg-tertiary: var(--clr-dark-2);
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+
+  --text-primary: var(--clr-ink);
+  --text-secondary: var(--clr-ink-mid);
+  --text-tertiary: var(--clr-muted);
+  --text-accent: var(--clr-accent);
+
+  --accent-primary: var(--clr-accent);
+  --accent-secondary: var(--clr-accent-dk);
+  --accent-gradient: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accent-dk) 100%);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 32px 80px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(198, 241, 53, 0.18);
+
+  --nav-bg: rgba(5, 5, 8, 0.85);
+  --nav-bg-scrolled: rgba(5, 5, 8, 0.95);
+  --nav-hover-bg: rgba(255,255,255,0.08);
+  --nav-border: rgba(255,255,255,0.07);
+
+  --toggle-bg: rgba(255, 255, 255, 0.08);
+  --toggle-icon: #ffffff;
+
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -65,6 +153,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: none;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -72,6 +161,19 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
 input, textarea, select { font: inherit; }
+
+a,
+[role='link'],
+[role='button'],
+label,
+summary {
+  cursor: pointer;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+textarea {
+  cursor: text;
+}
 
 /* ── Typography Scale ── */
 .t-label {
@@ -214,13 +316,13 @@ input, textarea, select { font: inherit; }
 }
 
 .btn--primary {
-  background: var(--clr-ink);
+  background: var(--clr-dark);
   color: var(--clr-accent);
-  border: 2px solid var(--clr-ink);
+  border: 2px solid var(--clr-dark);
 }
 .btn--primary:hover {
   background: var(--clr-accent);
-  color: var(--clr-ink);
+  color: var(--clr-dark);
   border-color: var(--clr-accent);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(198,241,53,0.35);
@@ -255,9 +357,9 @@ input, textarea, select { font: inherit; }
   border: 2px solid var(--clr-accent);
 }
 .btn--accent:hover {
-  background: var(--clr-ink);
+  background: var(--clr-dark);
   color: var(--clr-accent);
-  border-color: var(--clr-ink);
+  border-color: var(--clr-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(14,14,14,0.3);
 }
@@ -292,7 +394,7 @@ input, textarea, select { font: inherit; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  background: rgba(245,240,232,0.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px) saturate(1.4);
   -webkit-backdrop-filter: blur(14px) saturate(1.4);
   border-bottom: 1px solid var(--clr-border);
@@ -300,7 +402,7 @@ input, textarea, select { font: inherit; }
 }
 
 .site-nav.scrolled {
-  background: rgba(245,240,232,0.98);
+  background: var(--nav-bg-scrolled);
 }
 
 .site-nav .container {
@@ -348,7 +450,7 @@ input, textarea, select { font: inherit; }
 }
 .nav-links a:hover {
   color: var(--clr-ink);
-  background: rgba(14,14,14,0.06);
+  background: var(--nav-hover-bg);
 }
 .nav-links a.active {
   color: var(--clr-ink);
@@ -566,7 +668,7 @@ input, textarea, select { font: inherit; }
 
 /* ── Card base ── */
 .card {
-  background: var(--clr-white);
+  background: var(--bg-tertiary);
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   overflow: hidden;
@@ -985,7 +1087,7 @@ input, textarea, select { font: inherit; }
 /* CTA Band */
 .cta-band {
   padding-block: var(--sp-2xl);
-  background: var(--clr-ink);
+  background: var(--clr-dark);
   display: flex;
   align-items: center;
   gap: var(--sp-xl);
@@ -1469,7 +1571,7 @@ input, textarea, select { font: inherit; }
   border-bottom: 1px solid var(--clr-border);
 }
 .pricing-card--featured .pricing-header {
-  background: var(--clr-ink);
+  background: var(--clr-dark);
   border-color: transparent;
 }
 .pricing-badge {
@@ -1645,7 +1747,7 @@ input, textarea, select { font: inherit; }
 
 /* Contact Form */
 .contact-form-wrap {
-  background: var(--clr-white);
+  background: var(--bg-tertiary);
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   padding: var(--sp-xl);
@@ -2009,20 +2111,77 @@ input, textarea, select { font: inherit; }
   color: var(--clr-ink);
 }
 
-html,
-body {
-  overflow: hidden;
-  height: 100%;
+/* ── Custom Cursor ── */
+@media (pointer: fine) {
+  *,
+  a,
+  button,
+  [role="button"],
+  [role="link"],
+  label,
+  summary,
+  select {
+    cursor: none !important;
+  }
 }
 
-body {
-  perspective: 1200px;
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
 }
 
-.hero-headline,
-.hero-subheadline,
-.hero-eyebrow {
-  opacity: 0;
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--clr-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--clr-ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.65;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+@media (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+
+  *,
+  a,
+  button,
+  [role="button"],
+  [role="link"],
+  label,
+  summary,
+  select {
+    cursor: auto !important;
+  }
+
+  button {
+    cursor: pointer !important;
+  }
+
+  a,
+  [role="link"],
+  [role="button"],
+  label,
+  summary {
+    cursor: pointer !important;
+  }
 }
 
 .work-card,
@@ -2034,32 +2193,4 @@ body {
 .project-card img {
   will-change: transform;
   transform-origin: center center;
-}
-
-* {
-  cursor: none !important;
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s;
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
 }

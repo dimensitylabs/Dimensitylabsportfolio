@@ -1,10 +1,10 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Syne, Instrument_Serif, Syne_Mono } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import SmoothScrollProvider from '@/components/SmoothScrollProvider';
 import CustomCursor from '@/components/CustomCursor';
 
 const syne = Syne({
@@ -67,18 +67,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${syne.variable} ${instrumentSerif.variable} ${syneMono.variable} antialiased`}
         style={{ fontFamily: 'var(--font-instrument), Georgia, serif' }}
       >
-        <CustomCursor />
-        <SmoothScrollProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          storageKey="dimensity-theme-v2"
+        >
           <div className="page-load-bar" aria-hidden="true" />
+          <CustomCursor />
           <Navbar />
           <main>{children}</main>
           <Footer />
-        </SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

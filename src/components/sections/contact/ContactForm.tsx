@@ -17,13 +17,55 @@ interface FormState {
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
-export function ContactForm() {
+const calculatorServiceToContactService: Record<string, string> = {
+  landing: 'web',
+  website: 'web',
+  webapp: 'web',
+  mobile: 'mobile',
+  'ai-chatbot': 'ai',
+  'ai-automation': 'automation',
+  branding: 'branding',
+  consulting: 'consulting',
+};
+
+function formatCalculatorServices(services: string) {
+  return services
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s) => s.replace(/-/g, ' '))
+    .map((s) => s.replace(/\b\w/g, (m) => m.toUpperCase()))
+    .join(', ');
+}
+
+function mapCalculatorServicesToContactService(services: string): string | null {
+  const mapped = services
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s) => calculatorServiceToContactService[s])
+    .filter(Boolean);
+
+  const unique = Array.from(new Set(mapped));
+  return unique.length === 1 ? unique[0] : null;
+}
+
+export function ContactForm({
+  prefilledServices,
+  prefilledBudget,
+}: {
+  prefilledServices?: string | null;
+  prefilledBudget?: string | null;
+}) {
+  const inferredService =
+    prefilledServices ? mapCalculatorServicesToContactService(prefilledServices) : null;
+
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
     company: '',
-    service: '',
-    budget: '',
+    service: inferredService || '',
+    budget: prefilledBudget || '',
     message: '',
   });
   const [status, setStatus] = useState<Status>('idle');
@@ -137,12 +179,22 @@ export function ContactForm() {
               value={form.service}
               onChange={handleChange}
             >
+              {prefilledServices && !inferredService && (
+                <option value={prefilledServices}>
+                  From calculator: {formatCalculatorServices(prefilledServices)}
+                </option>
+              )}
               {serviceOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
                 </option>
               ))}
             </select>
+            {prefilledServices && (
+              <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Selected from your calculator: {formatCalculatorServices(prefilledServices)}
+              </p>
+            )}
           </div>
           <div className="form-group form-field">
             <label htmlFor="budget" className="form-label">
@@ -155,12 +207,22 @@ export function ContactForm() {
               value={form.budget}
               onChange={handleChange}
             >
+              {prefilledBudget && (
+                <option value={prefilledBudget}>
+                  Estimated: {prefilledBudget}
+                </option>
+              )}
               {budgetOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
                 </option>
               ))}
             </select>
+            {prefilledBudget && (
+              <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 4 }}>
+                Estimated from your calculator: {prefilledBudget}
+              </p>
+            )}
           </div>
         </div>
 
@@ -199,7 +261,7 @@ export function ContactForm() {
             role="alert"
             style={{
               marginTop: 'var(--sp-md)',
-              color: '#d94444',
+              color: 'var(--text-error)',
               fontSize: '0.875rem',
               fontWeight: 600,
             }}

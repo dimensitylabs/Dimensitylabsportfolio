@@ -3,6 +3,7 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { ServiceCard } from '@/components/sections/services/ServiceCard';
+import PricingCalculator from '@/components/PricingCalculator';
 import { services, processSteps, pricingTiers, faqs } from '@/lib/data';
 
 export function ServicesList() {
@@ -67,7 +68,7 @@ export function ServicesList() {
             aria-hidden="true"
             style={{
               height: '1px',
-              background: 'rgba(255,255,255,0.15)',
+              background: 'var(--border-subtle)',
               width: '100%',
               marginTop: 'var(--sp-xl)',
               transformOrigin: 'left center',
@@ -143,6 +144,8 @@ export function ServicesList() {
           </div>
         </div>
       </section>
+
+      <PricingCalculator />
 
       {/* FAQs */}
       <section

@@ -9,47 +9,61 @@ export default function HomeAnimations() {
     let originalQuoteText: string | null = null;
 
     const ctx = gsap.context(() => {
-      const heroTl = gsap.timeline({ delay: 0.2 });
 
+      const heroTl = gsap.timeline({ delay: 0.2 });
       heroTl
-        .fromTo(
-          '.hero-eyebrow',
-          { opacity: 0, y: -20, letterSpacing: '0.4em' },
-          {
-            opacity: 1,
-            y: 0,
-            letterSpacing: '0.1em',
-            duration: 0.8,
-            ease: 'power2.out',
-          },
-        )
-        .fromTo(
+        .from('.hero-eyebrow', {
+          opacity: 0,
+          y: -20,
+          letterSpacing: '0.4em',
+          duration: 0.8,
+          ease: 'power2.out',
+          clearProps: 'all',
+        })
+        .from(
           '.hero-headline',
-          { opacity: 0, y: 80, skewY: 4, transformOrigin: 'left bottom' },
-          { opacity: 1, y: 0, skewY: 0, duration: 1.1, ease: 'expo.out' },
+          {
+            opacity: 0,
+            y: 80,
+            skewY: 4,
+            duration: 1.1,
+            ease: 'expo.out',
+            clearProps: 'all',
+          },
           '-=0.4',
         )
-        .fromTo(
+        .from(
           '.hero-subheadline',
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out',
+            clearProps: 'all',
+          },
           '-=0.5',
         )
-        .fromTo(
+        .from(
           '.hero-cta',
-          { opacity: 0, y: 20, scale: 0.96 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.4)' },
+          {
+            opacity: 0,
+            y: 20,
+            scale: 0.96,
+            duration: 0.6,
+            ease: 'back.out(1.4)',
+            clearProps: 'all',
+          },
           '-=0.4',
         )
-        .fromTo(
+        .from(
           '.hero-socials a',
-          { opacity: 0, x: -12 },
           {
-            opacity: 1,
-            x: 0,
+            opacity: 0,
+            x: -12,
             stagger: 0.08,
             duration: 0.5,
             ease: 'power2.out',
+            clearProps: 'all',
           },
           '-=0.3',
         );
@@ -63,14 +77,16 @@ export default function HomeAnimations() {
 
         ScrollTrigger.create({
           trigger: el,
-          start: 'top 85%',
+          start: 'top 88%',
           onEnter: () => {
             if (el.parentElement) {
-              gsap.fromTo(
-                el.parentElement,
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-              );
+              gsap.from(el.parentElement, {
+                opacity: 0,
+                y: 30,
+                duration: 0.6,
+                ease: 'power3.out',
+                clearProps: 'all',
+              });
             }
             gsap.to(obj, {
               val: end,
@@ -95,76 +111,68 @@ export default function HomeAnimations() {
         },
       });
 
-      gsap.fromTo(
-        '.services-heading',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          ease: 'expo.out',
-          scrollTrigger: { trigger: '.services-heading', start: 'top 80%' },
+      gsap.from('.services-heading', {
+        opacity: 0,
+        y: 50,
+        duration: 0.9,
+        ease: 'expo.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.services-heading',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
         },
-      );
+      });
 
-      gsap.fromTo(
-        '.service-item',
-        { opacity: 0, y: 40, x: -20 },
-        {
-          opacity: 1,
-          y: 0,
-          x: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.service-item',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
+      gsap.from('.service-item', {
+        opacity: 0,
+        y: 40,
+        x: -20,
+        stagger: 0.1,
+        duration: 0.7,
+        ease: 'power3.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.service-item',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
         },
-      );
+      });
 
-      gsap.fromTo(
-        '.service-number',
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          stagger: 0.08,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '.service-item', start: 'top 80%' },
+      gsap.from('.service-number', {
+        opacity: 0,
+        x: -30,
+        stagger: 0.08,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.service-item',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
         },
-      );
+      });
 
       const workCards = gsap.utils.toArray<HTMLElement>('.work-card');
       workCards.forEach((card, i) => {
         const direction = i % 2 === 0 ? 1 : -1;
 
-        gsap.fromTo(
-          card,
-          {
-            opacity: 0,
-            y: 60,
-            rotateY: 8 * direction,
-            transformOrigin: 'center center',
-            transformPerspective: 1000,
+        gsap.from(card, {
+          opacity: 0,
+          y: 60,
+          rotateY: 8 * direction,
+          transformOrigin: 'center center',
+          transformPerspective: 1000,
+          duration: 1.0,
+          ease: 'expo.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
           },
-          {
-            opacity: 1,
-            y: 0,
-            rotateY: 0,
-            duration: 1.0,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-            delay: i * 0.06,
-          },
-        );
+          delay: i * 0.06,
+        });
 
         const img = card.querySelector('img');
         if (!img) return;
@@ -212,56 +220,52 @@ export default function HomeAnimations() {
           )
           .join('');
 
-        gsap.fromTo(
-          '.word-inner',
-          { y: '110%', opacity: 0 },
-          {
-            y: '0%',
-            opacity: 1,
-            stagger: 0.04,
-            duration: 0.7,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: quoteEl,
-              start: 'top 80%',
-            },
+        gsap.from('.word-inner', {
+          y: '110%',
+          opacity: 0,
+          stagger: 0.04,
+          duration: 0.7,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: quoteEl,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
           },
-        );
+        });
       }
 
-      gsap.fromTo(
-        '.bottom-stat',
-        { opacity: 0, x: -40 },
-        {
-          opacity: 1,
-          x: 0,
-          stagger: 0.12,
-          duration: 0.8,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: '.bottom-stats',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
+      gsap.from('.bottom-stat', {
+        opacity: 0,
+        x: -40,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: 'expo.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.bottom-stats',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
         },
-      );
+      });
 
-      gsap.fromTo(
-        '.bottom-cta-section',
-        { opacity: 0, scale: 0.94, y: 40 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 1.0,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: '.bottom-cta-section',
-            start: 'top 85%',
-          },
+      gsap.from('.bottom-cta-section', {
+        opacity: 0,
+        scale: 0.94,
+        y: 40,
+        duration: 1.0,
+        ease: 'expo.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.bottom-cta-section',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
         },
-      );
+      });
     });
+
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', handleLoad);
 
     return () => {
       cleanupFns.forEach((fn) => fn());
@@ -269,6 +273,7 @@ export default function HomeAnimations() {
         const quoteEl = document.querySelector<HTMLElement>('.manifesto-quote');
         if (quoteEl) quoteEl.textContent = originalQuoteText;
       }
+      window.removeEventListener('load', handleLoad);
       ctx.revert();
     };
   }, []);
