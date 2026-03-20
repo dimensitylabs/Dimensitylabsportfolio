@@ -1,15 +1,9 @@
 "use client";
-import { useEffect,useState } from 'react';
 import { useTheme } from 'next-themes';
 import { gsap } from '@/lib/gsap';
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const isDark = (theme ?? 'light') === 'dark';
 
@@ -51,21 +45,6 @@ export default function ThemeToggle() {
     userSelect: 'none' as const,
   };
 
-  if (!mounted) {
-    // Return a default light mode button for SSR to prevent hydration issues
-    return (
-      <button
-        aria-label="Switch to dark mode"
-        type="button"
-        style={buttonStyle}
-      >
-        <span className="theme-toggle-icon" style={iconStyle}>
-          ☽
-        </span>
-      </button>
-    );
-  }
-
   return (
     <button
       onClick={handleToggle}
@@ -75,6 +54,7 @@ export default function ThemeToggle() {
     >
       <span
         className="theme-toggle-icon"
+        suppressHydrationWarning
         style={iconStyle}
       >
         {isDark ? '☀︎' : '☽'}
