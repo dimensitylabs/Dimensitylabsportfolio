@@ -137,10 +137,10 @@ This project is private. All rights reserved.
 
 ## 📞 Contact
 
-- **Website**: https://DimensityLabsstudio.com
-- **Email**: hello@DimensityLabsstudio.com
-- **Location**: Oslo, Norway (HQ) with partner office in London
+- **Website**: https://dimensitylabs.com
+- **Email**: hello@dimensitylabs.com
+- **Location**: Mumbai, India (Remote-first, available globally)
 
 ---
 
-Built with ❤️ by Dimensity Labs — "We make the invisible, inevitable."
+Built with love by Dimensity Labs — "We make the invisible, inevitable."

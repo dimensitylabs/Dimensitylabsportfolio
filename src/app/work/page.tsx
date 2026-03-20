@@ -5,18 +5,26 @@ import { ProjectGrid } from '@/components/sections/work/ProjectGrid';
 import { CTA } from '@/components/sections/home/CTA';
 
 export const metadata: Metadata = {
-  title: 'Our Work | Web, Mobile & AI Case Studies',
+  title: 'Work',
   description:
-    'Explore case studies from Dimensity Labs across web development, mobile apps, AI solutions, and automation projects.',
+    'Explore case studies from Dimensity Labs. Web development, mobile apps, AI solutions, and automation projects.',
   alternates: {
     canonical: 'https://dimensitylabs.com/work',
   },
   openGraph: {
-    title: 'Dimensity Labs Case Studies',
+    title: 'Work | Dimensity Labs',
     description:
-      'Project examples across web, mobile, AI, and automation delivery for growth-focused teams.',
+      'Explore case studies from Dimensity Labs. Web development, mobile apps, AI solutions, and automation projects.',
     url: 'https://dimensitylabs.com/work',
     type: 'website',
+    images: [
+      {
+        url: '/og-work.png',
+        width: 1200,
+        height: 630,
+        alt: 'Work - Dimensity Labs',
+      },
+    ],
   },
 };
 

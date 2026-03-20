@@ -1,3 +1,4 @@
+"use client";
 // src/components/layout/Footer.tsx
 import Link from 'next/link';
 import { socialLinks } from '@/lib/data';
@@ -67,9 +68,9 @@ export function Footer() {
         <div className="footer-bottom">
           <p className="footer-copy">© 2025 Dimensity Labs. All rights reserved.</p>
           <nav className="footer-bottom-links" aria-label="Legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Cookie Settings</a>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <a href="#" onClick={(e) => e.preventDefault()}>Cookie Settings</a>
           </nav>
         </div>
       </div>

@@ -6,24 +6,26 @@ import { CTA } from '@/components/sections/home/CTA';
 import { faqs } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Web, Mobile App & AI Automation Services in Mumbai',
+  title: 'Services',
   description:
-    'Web development, mobile app development, AI solutions, and AI automation services in Mumbai with transparent process and pricing.',
-  keywords: [
-    'web development services mumbai',
-    'mobile app development services mumbai',
-    'ai automation services mumbai',
-    'digital agency services mumbai',
-  ],
+    'Web development, mobile app development, AI solutions, and AI automation services with transparent process and pricing.',
   alternates: {
     canonical: 'https://dimensitylabs.com/services',
   },
   openGraph: {
-    title: 'Dimensity Labs Services | Web, Mobile & AI Automation',
+    title: 'Services | Dimensity Labs',
     description:
-      'Explore web development, mobile app, AI solutions, automation, branding, and consulting services for growth-focused businesses.',
+      'Web development, mobile app development, AI solutions, and AI automation services with transparent process and pricing.',
     url: 'https://dimensitylabs.com/services',
     type: 'website',
+    images: [
+      {
+        url: '/og-services.png',
+        width: 1200,
+        height: 630,
+        alt: 'Services - Dimensity Labs',
+      },
+    ],
   },
 };
 

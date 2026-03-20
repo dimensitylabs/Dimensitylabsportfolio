@@ -2528,7 +2528,7 @@ textarea {
   .team-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Loading skeleton ── */
+/* -- Loading skeleton -- */
 .skeleton {
   background: linear-gradient(90deg, var(--clr-surface) 25%, var(--clr-bg) 50%, var(--clr-surface) 75%);
   background-size: 200% 100%;
@@ -2538,6 +2538,18 @@ textarea {
 @keyframes skeleton-shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+.loading-skeleton {
+  min-height: 100vh;
+  background: var(--clr-bg);
+}
+
+.skeleton-block {
+  background: linear-gradient(90deg, var(--clr-surface) 25%, var(--clr-bg) 50%, var(--clr-surface) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
 }
 
 /* ── Form validation states ── */
@@ -2567,16 +2579,16 @@ textarea {
   color: var(--clr-ink);
 }
 
-/* ── Custom Cursor ── */
+/* -- Custom Cursor -- */
 @media (pointer: fine) {
-  *,
-  a,
-  button,
-  [role="button"],
-  [role="link"],
-  label,
-  summary,
-  select {
+  .custom-cursor-enabled *,
+  .custom-cursor-enabled a,
+  .custom-cursor-enabled button,
+  .custom-cursor-enabled [role="button"],
+  .custom-cursor-enabled [role="link"],
+  .custom-cursor-enabled label,
+  .custom-cursor-enabled summary,
+  .custom-cursor-enabled select {
     cursor: none !important;
   }
 }

@@ -31,8 +31,8 @@ const syneMono = Syne_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dimensity Labs — Digital Agency',
-    template: '%s — Dimensity Labs',
+    default: 'Dimensity Labs',
+    template: '%s | Dimensity Labs',
   },
   description:
     'Mumbai digital agency for web development, mobile app development, AI solutions, and automation systems built for growth.',
@@ -46,19 +46,30 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://dimensitylabs.com'),
   openGraph: {
-    title: 'Dimensity Labs | Web, Mobile & AI Automation Agency in Mumbai',
+    title: 'Dimensity Labs',
     description:
       'Web development, mobile app development, AI solutions, and workflow automation for startups and growing businesses.',
     url: 'https://dimensitylabs.com',
     siteName: 'Dimensity Labs',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dimensity Labs - Web, Mobile & AI Automation Agency in Mumbai',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dimensity Labs | Web, Mobile & AI Automation Agency in Mumbai',
+    title: 'Dimensity Labs',
     description:
       'Web development, mobile app development, AI solutions, and workflow automation for startups and growing businesses.',
+    images: ['/og-image.png'],
+    site: '@dimensitylabs',
+    creator: '@dimensitylabs',
   },
   robots: {
     index: true,

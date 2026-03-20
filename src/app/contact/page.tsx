@@ -5,18 +5,26 @@ import { ContactInfo } from '@/components/sections/contact/ContactInfo';
 import { ContactForm } from '@/components/sections/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Dimensity Labs | Start Your Project',
+  title: 'Contact',
   description:
-    'Contact Dimensity Labs in Mumbai for web development, mobile app development, AI solutions, and automation projects.',
+    'Get in touch with Dimensity Labs. Start your web development, mobile app, AI solution, or automation project today.',
   alternates: {
     canonical: 'https://dimensitylabs.com/contact',
   },
   openGraph: {
-    title: 'Contact Dimensity Labs',
+    title: 'Contact | Dimensity Labs',
     description:
-      'Start a web, mobile, AI solution, or automation project with our team.',
+      'Get in touch with Dimensity Labs. Start your web development, mobile app, AI solution, or automation project today.',
     url: 'https://dimensitylabs.com/contact',
     type: 'website',
+    images: [
+      {
+        url: '/og-contact.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact - Dimensity Labs',
+      },
+    ],
   },
 };
 

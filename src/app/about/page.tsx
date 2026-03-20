@@ -7,18 +7,26 @@ import { Team } from '@/components/sections/about/Team';
 import { CTA } from '@/components/sections/home/CTA';
 
 export const metadata: Metadata = {
-  title: 'About Dimensity Labs | Digital Agency in Mumbai',
+  title: 'About',
   description:
-    'Meet Dimensity Labs, a Mumbai digital agency focused on web development, mobile apps, AI solutions, and automation delivery.',
+    'Meet the team behind Dimensity Labs. A Mumbai digital agency focused on web development, mobile apps, AI solutions, and automation.',
   alternates: {
     canonical: 'https://dimensitylabs.com/about',
   },
   openGraph: {
-    title: 'About Dimensity Labs',
+    title: 'About | Dimensity Labs',
     description:
-      'Learn about our team, process, and delivery approach for web, mobile, and AI projects.',
+      'Meet the team behind Dimensity Labs. A Mumbai digital agency focused on web development, mobile apps, AI solutions, and automation.',
     url: 'https://dimensitylabs.com/about',
     type: 'website',
+    images: [
+      {
+        url: '/og-about.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Dimensity Labs',
+      },
+    ],
   },
 };
 

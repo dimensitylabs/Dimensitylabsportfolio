@@ -3,33 +3,42 @@ import dbConnect from '@/lib/mongoose';
 import Contact from '@/models/Contact';
 import nodemailer from 'nodemailer';
 
-// --- Rate Limiting Setup ---
-// Simple in-memory store for rate limiting (Note: resets on server restart or serverless cold starts)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 3;
+
+declare global {
+  var rateLimitStore: Map<string, { count: number; resetTime: number }> | undefined;
+}
+
+const getRateLimitStore = (): Map<string, { count: number; resetTime: number }> => {
+  if (typeof globalThis.rateLimitStore === 'undefined') {
+    globalThis.rateLimitStore = new Map();
+  }
+  return globalThis.rateLimitStore;
+};
 
 function getRateLimit(ip: string): boolean {
   const now = Date.now();
+  const rateLimitMap = getRateLimitStore();
   const record = rateLimitMap.get(ip);
 
   if (!record) {
     rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
-    return true; // Allowed
+    return true;
   }
 
   if (now > record.resetTime) {
     record.count = 1;
     record.resetTime = now + RATE_LIMIT_WINDOW_MS;
-    return true; // Allowed (window reset)
+    return true;
   }
 
   if (record.count >= MAX_REQUESTS_PER_WINDOW) {
-    return false; // Rate limited
+    return false;
   }
 
   record.count++;
-  return true; // Allowed
+  return true;
 }
 
 export async function POST(req: Request) {

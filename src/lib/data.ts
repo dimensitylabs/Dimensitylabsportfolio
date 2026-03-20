@@ -223,13 +223,13 @@ export const allProjects: Project[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: '[Your Name]',
+    name: 'Dimensity Labs',
     role: 'Founder & CEO',
     bio: 'Designer, developer, and AI enthusiast. Building Dimensity Labs to bridge the gap between great ideas and great digital products.',
     image: 'https://picsum.photos/seed/founder/400/533',
   },
   {
-    name: "We're Growing 🚀",
+    name: "We're Growing",
     role: 'Interested in working together? Reach out.',
     href: '/contact',
     image: 'https://picsum.photos/seed/growing/400/533',
@@ -436,11 +436,11 @@ export const contactEmails: ContactEmail[] = [
 ];
 
 export const socialLinks = [
-  { label: 'Instagram', abbr: 'IG', href: '#' },
-  { label: 'Twitter/X', abbr: 'X', href: '#' },
-  { label: 'LinkedIn', abbr: 'LI', href: '#' },
-  { label: 'Dribbble', abbr: 'DR', href: '#' },
-  { label: 'Behance', abbr: 'BE', href: '#' },
+  { label: 'Instagram', abbr: 'IG', href: 'https://instagram.com/dimensitylabs' },
+  { label: 'Twitter/X', abbr: 'X', href: 'https://x.com/dimensitylabs' },
+  { label: 'LinkedIn', abbr: 'LI', href: 'https://linkedin.com/company/dimensitylabs' },
+  { label: 'Dribbble', abbr: 'DR', href: 'https://dribbble.com/dimensitylabs' },
+  { label: 'Behance', abbr: 'BE', href: 'https://behance.net/dimensitylabs' },
 ];
 
 export const awardsLabels: string[] = [

@@ -53,9 +53,11 @@ export default function CustomCursor() {
       if (isTouch.current) {
         dot.style.display = "none";
         ring.style.display = "none";
+        document.body.classList.remove("custom-cursor-enabled");
       } else {
         dot.style.display = "block";
         ring.style.display = "block";
+        document.body.classList.add("custom-cursor-enabled");
       }
     };
     checkTouch();

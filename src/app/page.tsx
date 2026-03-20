@@ -9,17 +9,26 @@ import { Testimonials } from '@/components/sections/home/Testimonials';
 import { CTA } from '@/components/sections/home/CTA';
 
 export const metadata: Metadata = {
-  title: 'Digital Agency in Mumbai for Web, Mobile & AI',
+  title: 'Dimensity Labs',
   description:
-    'Dimensity Labs is a Mumbai digital agency delivering web development, mobile app development, AI solutions, and automation for growing businesses.',
-  keywords: [
-    'digital agency mumbai',
-    'web development company mumbai',
-    'mobile app development company mumbai',
-    'ai automation agency mumbai',
-  ],
+    'Mumbai digital agency delivering web development, mobile app development, AI solutions, and automation for growing businesses.',
   alternates: {
     canonical: 'https://dimensitylabs.com',
+  },
+  openGraph: {
+    title: 'Dimensity Labs',
+    description:
+      'Web development, mobile app development, AI solutions, and automation for growing businesses.',
+    url: 'https://dimensitylabs.com',
+    type: 'website',
+    images: [
+      {
+        url: '/og-home.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dimensity Labs',
+      },
+    ],
   },
 };
 
