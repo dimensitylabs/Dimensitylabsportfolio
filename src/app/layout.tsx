@@ -35,12 +35,20 @@ export const metadata: Metadata = {
     template: '%s — Dimensity Labs',
   },
   description:
-    'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
+    'Mumbai digital agency for web development, mobile app development, AI solutions, and automation systems built for growth.',
+  keywords: [
+    'digital agency mumbai',
+    'web development company mumbai',
+    'mobile app development company mumbai',
+    'ai automation agency mumbai',
+    'ai solutions company mumbai',
+    'branding agency mumbai',
+  ],
   metadataBase: new URL('https://dimensitylabs.com'),
   openGraph: {
-    title: 'Dimensity Labs — Digital Agency',
+    title: 'Dimensity Labs | Web, Mobile & AI Automation Agency in Mumbai',
     description:
-      'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
+      'Web development, mobile app development, AI solutions, and workflow automation for startups and growing businesses.',
     url: 'https://dimensitylabs.com',
     siteName: 'Dimensity Labs',
     locale: 'en_US',
@@ -48,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dimensity Labs — Digital Agency',
+    title: 'Dimensity Labs | Web, Mobile & AI Automation Agency in Mumbai',
     description:
-      'Mumbai-based digital agency building websites, mobile apps, AI solutions and automations for startups and businesses ready to scale.',
+      'Web development, mobile app development, AI solutions, and workflow automation for startups and growing businesses.',
   },
   robots: {
     index: true,
@@ -59,6 +67,37 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dimensitylabs.com',
   },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Dimensity Labs',
+  url: 'https://dimensitylabs.com',
+  logo: 'https://dimensitylabs.com/favicon.ico',
+  description:
+    'Digital agency in Mumbai offering web development, mobile app development, AI solutions, and workflow automation.',
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Dimensity Labs',
+  image: 'https://dimensitylabs.com/favicon.ico',
+  url: 'https://dimensitylabs.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mumbai',
+    addressCountry: 'IN',
+  },
+  areaServed: ['Mumbai', 'India', 'Global'],
+  serviceType: [
+    'Web Development',
+    'Mobile App Development',
+    'AI Solutions',
+    'AI Automation',
+    'Digital Branding',
+  ],
 };
 
 export default function RootLayout({
@@ -78,6 +117,14 @@ export default function RootLayout({
           enableSystem={false}
           storageKey="dimensity-theme-v2"
         >
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          />
           <div className="page-load-bar" aria-hidden="true" />
           <CustomCursor />
           <Navbar />

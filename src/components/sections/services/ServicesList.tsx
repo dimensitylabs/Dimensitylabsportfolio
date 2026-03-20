@@ -1,10 +1,20 @@
 // src/components/sections/services/ServicesList.tsx
+import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { ServiceCard } from '@/components/sections/services/ServiceCard';
 import PricingCalculator from '@/components/PricingCalculator';
 import { services, processSteps, pricingTiers, faqs } from '@/lib/data';
+
+const serviceLinks = [
+  { href: '/services/web-development', label: 'Web Development' },
+  { href: '/services/mobile-app-development', label: 'Mobile App Development' },
+  { href: '/services/ai-solutions', label: 'AI Solutions' },
+  { href: '/services/ai-automation', label: 'AI Automation' },
+  { href: '/services/digital-branding', label: 'Digital Branding' },
+  { href: '/services/consulting-strategy', label: 'Consulting & Strategy' },
+];
 
 export function ServicesList() {
   return (
@@ -35,6 +45,18 @@ export function ServicesList() {
                 <div style={{ display: 'flex', gap: 'var(--sp-md)', flexWrap: 'wrap' }}>
                   <Button href="/contact" variant="primary">Start a Project</Button>
                   <Button href="/work" variant="outline">See Our Work</Button>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                  {serviceLinks.map((serviceLink) => (
+                    <Link
+                      key={serviceLink.href}
+                      href={serviceLink.href}
+                      className="btn btn--outline"
+                      style={{ padding: '10px 16px', fontSize: '0.72rem' }}
+                    >
+                      {serviceLink.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </AnimatedSection>

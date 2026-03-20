@@ -5,9 +5,19 @@ import { ProjectGrid } from '@/components/sections/work/ProjectGrid';
 import { CTA } from '@/components/sections/home/CTA';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'Our Work | Web, Mobile & AI Case Studies',
   description:
-    'Projects from Dimensity Labs. Web development, mobile apps, AI solutions, automation, and branding.',
+    'Explore case studies from Dimensity Labs across web development, mobile apps, AI solutions, and automation projects.',
+  alternates: {
+    canonical: 'https://dimensitylabs.com/work',
+  },
+  openGraph: {
+    title: 'Dimensity Labs Case Studies',
+    description:
+      'Project examples across web, mobile, AI, and automation delivery for growth-focused teams.',
+    url: 'https://dimensitylabs.com/work',
+    type: 'website',
+  },
 };
 
 export default function WorkPage() {

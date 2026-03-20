@@ -5,9 +5,19 @@ import { ContactInfo } from '@/components/sections/contact/ContactInfo';
 import { ContactForm } from '@/components/sections/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact Dimensity Labs | Start Your Project',
   description:
-    'Start a project with Dimensity Labs. Get in touch for web development, mobile apps, AI solutions and automations.',
+    'Contact Dimensity Labs in Mumbai for web development, mobile app development, AI solutions, and automation projects.',
+  alternates: {
+    canonical: 'https://dimensitylabs.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Dimensity Labs',
+    description:
+      'Start a web, mobile, AI solution, or automation project with our team.',
+    url: 'https://dimensitylabs.com/contact',
+    type: 'website',
+  },
 };
 
 export default async function ContactPage({
