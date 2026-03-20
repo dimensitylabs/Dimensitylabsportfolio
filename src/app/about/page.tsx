@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Meet the team behind Dimensity Labs. A Mumbai digital agency focused on web development, mobile apps, AI solutions, and automation.',
   alternates: {
-    canonical: 'https://dimensitylabs.com/about',
+    canonical: 'https://www.dimensitylabs.dev/about',
   },
   openGraph: {
     title: 'About | Dimensity Labs',
     description:
       'Meet the team behind Dimensity Labs. A Mumbai digital agency focused on web development, mobile apps, AI solutions, and automation.',
-    url: 'https://dimensitylabs.com/about',
+    url: 'https://www.dimensitylabs.dev/about',
     type: 'website',
     images: [
       {

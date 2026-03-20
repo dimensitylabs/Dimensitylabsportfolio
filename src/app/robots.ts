@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://dimensitylabs.com/sitemap.xml',
-    host: 'https://dimensitylabs.com',
+    sitemap: 'https://www.dimensitylabs.dev/sitemap.xml',
+    host: 'https://www.dimensitylabs.dev',
   };
 }

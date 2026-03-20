@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'Get in touch with Dimensity Labs. Start your web development, mobile app, AI solution, or automation project today.',
   alternates: {
-    canonical: 'https://dimensitylabs.com/contact',
+    canonical: 'https://www.dimensitylabs.dev/contact',
   },
   openGraph: {
     title: 'Contact | Dimensity Labs',
     description:
       'Get in touch with Dimensity Labs. Start your web development, mobile app, AI solution, or automation project today.',
-    url: 'https://dimensitylabs.com/contact',
+    url: 'https://www.dimensitylabs.dev/contact',
     type: 'website',
     images: [
       {

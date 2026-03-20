@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'Explore case studies from Dimensity Labs. Web development, mobile apps, AI solutions, and automation projects.',
   alternates: {
-    canonical: 'https://dimensitylabs.com/work',
+    canonical: 'https://www.dimensitylabs.dev/work',
   },
   openGraph: {
     title: 'Work | Dimensity Labs',
     description:
       'Explore case studies from Dimensity Labs. Web development, mobile apps, AI solutions, and automation projects.',
-    url: 'https://dimensitylabs.com/work',
+    url: 'https://www.dimensitylabs.dev/work',
     type: 'website',
     images: [
       {

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Web development, mobile app development, AI solutions, and AI automation services with transparent process and pricing.',
   alternates: {
-    canonical: 'https://dimensitylabs.com/services',
+    canonical: 'https://www.dimensitylabs.dev/services',
   },
   openGraph: {
     title: 'Services | Dimensity Labs',
     description:
       'Web development, mobile app development, AI solutions, and AI automation services with transparent process and pricing.',
-    url: 'https://dimensitylabs.com/services',
+    url: 'https://www.dimensitylabs.dev/services',
     type: 'website',
     images: [
       {

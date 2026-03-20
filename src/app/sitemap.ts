@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dimensitylabs.com';
+  const baseUrl = 'https://www.dimensitylabs.dev';
   const now = new Date();
   const serviceSlugs = [
     'web-development',

@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     'ai solutions company mumbai',
     'branding agency mumbai',
   ],
-  metadataBase: new URL('https://dimensitylabs.com'),
+  metadataBase: new URL('https://www.dimensitylabs.dev'),
   openGraph: {
     title: 'Dimensity Labs',
     description:
       'Web development, mobile app development, AI solutions, and workflow automation for startups and growing businesses.',
-    url: 'https://dimensitylabs.com',
+    url: 'https://www.dimensitylabs.dev',
     siteName: 'Dimensity Labs',
     locale: 'en_US',
     type: 'website',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://dimensitylabs.com',
+    canonical: 'https://www.dimensitylabs.dev',
   },
 };
 
@@ -84,8 +84,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Dimensity Labs',
-  url: 'https://dimensitylabs.com',
-  logo: 'https://dimensitylabs.com/favicon.ico',
+  url: 'https://www.dimensitylabs.dev',
+  logo: 'https://www.dimensitylabs.dev/favicon.ico',
   description:
     'Digital agency in Mumbai offering web development, mobile app development, AI solutions, and workflow automation.',
 };
@@ -94,8 +94,8 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Dimensity Labs',
-  image: 'https://dimensitylabs.com/favicon.ico',
-  url: 'https://dimensitylabs.com',
+  image: 'https://www.dimensitylabs.dev/favicon.ico',
+  url: 'https://www.dimensitylabs.dev',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Mumbai',

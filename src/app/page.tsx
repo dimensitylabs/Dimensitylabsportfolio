@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     'Mumbai digital agency delivering web development, mobile app development, AI solutions, and automation for growing businesses.',
   alternates: {
-    canonical: 'https://dimensitylabs.com',
+    canonical: 'https://www.dimensitylabs.dev',
   },
   openGraph: {
     title: 'Dimensity Labs',
     description:
       'Web development, mobile app development, AI solutions, and automation for growing businesses.',
-    url: 'https://dimensitylabs.com',
+    url: 'https://www.dimensitylabs.dev',
     type: 'website',
     images: [
       {
