@@ -112,9 +112,9 @@ Work through these in order. Each task tells you exactly which files to create o
 **Priority:** Critical · **Phase:** 1 · **Week:** 1
 
 **Files to edit:**
-- `app/contact/page.tsx` — update `mailto:hello@dimensitylabs.com` → `mailto:hello@dimensitylabs.dev`
+- `app/contact/page.tsx` — update `mailto:business@dimensitylabs.com` → `mailto:business@dimensitylabs.dev`
 - `lib/metadata.ts` — if email appears in metadata
-- `.env` / `.env.local` — update `CONTACT_EMAIL=hello@dimensitylabs.dev`
+- `.env` / `.env.local` — update `CONTACT_EMAIL=business@dimensitylabs.dev`
 
 **Steps:**
 1. Run `grep -r "dimensitylabs.com" --include="*.tsx" --include="*.ts" --include="*.env*" .` to find every instance
@@ -624,7 +624,7 @@ export function organizationSchema() {
     name: 'Dimensity Labs',
     url: 'https://dimensitylabs.dev',
     logo: 'https://dimensitylabs.dev/images/logo.png',
-    email: 'hello@dimensitylabs.dev',
+    email: 'business@dimensitylabs.dev',
     foundingDate: '2025',
     address: {
       '@type': 'PostalAddress',
@@ -645,7 +645,7 @@ export function localBusinessSchema() {
     '@type': 'ProfessionalService',
     name: 'Dimensity Labs',
     url: 'https://dimensitylabs.dev',
-    email: 'hello@dimensitylabs.dev',
+    email: 'business@dimensitylabs.dev',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Mumbai',
