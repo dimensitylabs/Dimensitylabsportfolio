@@ -5,8 +5,8 @@ import { CURRENCIES, COUNTRY_TO_CURRENCY, type Currency } from '@/lib/pricing';
 
 export function useGeoCurrency() {
   const [currency, setCurrency] = useState<Currency>(CURRENCIES.DEFAULT);
-  const [countryCode, setCountryCode] = useState<string>('US');
-  const [loading, setLoading] = useState(true);
+  const [countryCode, setCountryCode] = useState<string>('IN');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const detect = async () => {

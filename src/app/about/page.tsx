@@ -1,10 +1,12 @@
 // src/app/about/page.tsx
 import type { Metadata } from 'next';
 import AboutAnimations from '@/components/AboutAnimations';
+import dynamic from 'next/dynamic';
 import { Mission } from '@/components/sections/about/Mission';
-import { Stats } from '@/components/sections/about/Stats';
-import { Team } from '@/components/sections/about/Team';
-import { CTA } from '@/components/sections/home/CTA';
+
+const Stats = dynamic(() => import('@/components/sections/about/Stats').then((m) => m.Stats));
+const Team = dynamic(() => import('@/components/sections/about/Team').then((m) => m.Team));
+const CTA = dynamic(() => import('@/components/sections/home/CTA').then((m) => m.CTA));
 
 export const metadata: Metadata = {
   title: 'About',

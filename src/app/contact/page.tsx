@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import ContactAnimations from '@/components/ContactAnimations';
 import { ContactInfo } from '@/components/sections/contact/ContactInfo';
 import { ContactForm } from '@/components/sections/contact/ContactForm';
+import { localBusinessSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -39,6 +40,10 @@ export default async function ContactPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
+      />
       <ContactAnimations />
       <ContactInfo
         formSlot={

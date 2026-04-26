@@ -2,7 +2,9 @@
 import type { Metadata } from 'next';
 import WorkAnimations from '@/components/WorkAnimations';
 import { ProjectGrid } from '@/components/sections/work/ProjectGrid';
-import { CTA } from '@/components/sections/home/CTA';
+import dynamic from 'next/dynamic';
+
+const CTA = dynamic(() => import('@/components/sections/home/CTA').then((m) => m.CTA));
 
 export const metadata: Metadata = {
   title: 'Work',

@@ -14,7 +14,7 @@ export const CURRENCIES: Record<string, Currency> = {
   CA: { code: 'CAD', symbol: 'C$', name: 'Canadian Dollar', rate: 1.36 },
   SG: { code: 'SGD', symbol: 'S$', name: 'Singapore Dollar', rate: 1.34 },
   AE: { code: 'AED', symbol: 'د.إ', name: 'UAE Dirham', rate: 3.67 },
-  DEFAULT: { code: 'USD', symbol: '$', name: 'US Dollar', rate: 1 },
+  DEFAULT: { code: 'INR', symbol: '₹', name: 'Indian Rupee', rate: 83.5 },
 };
 
 export const COUNTRY_TO_CURRENCY: Record<string, string> = {
