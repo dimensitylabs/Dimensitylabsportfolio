@@ -1,7 +1,7 @@
 // src/components/ui/Button.tsx
 import Link from 'next/link';
 
-type ButtonVariant = 'primary' | 'outline' | 'outline-light' | 'accent';
+type ButtonVariant = 'primary' | 'outline' | 'outline-light' | 'accent' | 'default';
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -18,6 +18,7 @@ interface ButtonProps {
 
 const variantClass: Record<ButtonVariant, string> = {
   primary: 'btn--primary',
+  'default': 'btn--primary',
   outline: 'btn--outline',
   'outline-light': 'btn--outline-light',
   accent: 'btn--accent',

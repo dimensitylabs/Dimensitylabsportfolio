@@ -4,8 +4,9 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { ServiceCard } from '@/components/sections/services/ServiceCard';
+import { PricingCards } from '@/components/sections/services/PricingCards';
 import PricingCalculator from '@/components/PricingCalculator';
-import { services, processSteps, pricingTiers, faqs } from '@/lib/data';
+import { services, processSteps, faqs } from '@/lib/data';
 
 const serviceLinks = [
   { href: '/services/web-development', label: 'Web Development' },
@@ -123,49 +124,10 @@ export function ServicesList() {
               title="Transparent pricing. Radical, we know."
             />
           </AnimatedSection>
-
-          <div className="pricing-grid">
-            {pricingTiers.map((tier, i) => (
-              <AnimatedSection
-                as="div"
-                className={`pricing-card${tier.featured ? ' pricing-card--featured' : ''}`}
-                key={tier.tier}
-                delay={i * 0.1}
-              >
-                <div className="pricing-header">
-                  {tier.badge && (
-                    <span className="pricing-badge">{tier.badge}</span>
-                  )}
-                  <div className="pricing-tier">{tier.tier}</div>
-                  <div className="pricing-price">
-                    <span className="pricing-price-num">{tier.price}</span>
-                    {tier.period && (
-                      <span className="pricing-price-period">{tier.period}</span>
-                    )}
-                  </div>
-                  <p className="pricing-desc">{tier.description}</p>
-                </div>
-                <div className="pricing-body">
-                  <div className="pricing-features">
-                    {tier.features.map((feat) => (
-                      <div className="pricing-feature" key={feat}>
-                        {feat}
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    href="/contact"
-                    variant={tier.featured ? 'accent' : 'outline'}
-                    fullWidth
-                  >
-                    {tier.ctaLabel}
-                  </Button>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
+
+      <PricingCards />
 
       <PricingCalculator />
 
