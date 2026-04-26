@@ -117,7 +117,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Web Development'],
-    image: 'https://picsum.photos/seed/Dimensity Labs01/900/507',
+    image: '/images/work/ecommerce-platform.jpg',
     imageAlt: 'E-commerce platform project',
     layout: 'featured',
   },
@@ -127,7 +127,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['AI Solutions'],
-    image: 'https://picsum.photos/seed/Dimensity Labs02/600/800',
+    image: '/images/work/ai-chatbot.jpg',
     imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
@@ -137,7 +137,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Mobile App'],
-    image: 'https://picsum.photos/seed/Dimensity Labs03/480/360',
+    image: '/images/work/fintech-app.jpg',
     imageAlt: 'FinTech mobile app project',
     layout: 'standard',
   },
@@ -147,7 +147,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['AI Automation'],
-    image: 'https://picsum.photos/seed/Dimensity Labs04/480/360',
+    image: '/images/work/workflow-automation.jpg',
     imageAlt: 'Workflow automation project',
     layout: 'standard',
   },
@@ -157,7 +157,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Branding'],
-    image: 'https://picsum.photos/seed/Dimensity Labs05/480/360',
+    image: '/images/work/brand-identity.jpg',
     imageAlt: 'Brand identity project',
     layout: 'standard',
   },
@@ -171,7 +171,7 @@ export const allProjects: Project[] = [
     description:
       'A complete e-commerce store built with Next.js, Stripe payments, and a headless CMS. Mobile-first, fast, and conversion-optimised.',
     tags: ['Web Development'],
-    image: 'https://picsum.photos/seed/case01/1200/750',
+    image: '/images/work/ecommerce-platform.jpg',
     imageAlt: 'E-commerce platform project',
     layout: 'featured',
   },
@@ -182,7 +182,7 @@ export const allProjects: Project[] = [
     description:
       'A custom LLM-powered chatbot trained on client documentation, reducing support tickets by 60%.',
     tags: ['AI Solutions'],
-    image: 'https://picsum.photos/seed/case02/600/800',
+    image: '/images/work/ai-chatbot.jpg',
     imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
@@ -193,7 +193,7 @@ export const allProjects: Project[] = [
     description:
       'Cross-platform personal finance tracker built with React Native. Available on iOS and Android.',
     tags: ['Mobile App'],
-    image: 'https://picsum.photos/seed/case03/600/800',
+    image: '/images/work/fintech-app.jpg',
     imageAlt: 'Mobile app project',
     layout: 'standard',
   },
@@ -204,7 +204,7 @@ export const allProjects: Project[] = [
     description:
       'Make.com automation pipeline connecting CRM, email, and Slack — saving 20+ hours per week.',
     tags: ['AI Automation'],
-    image: 'https://picsum.photos/seed/case04/900/563',
+    image: '/images/work/workflow-automation.jpg',
     imageAlt: 'Automation pipeline project',
     layout: 'wide',
   },
@@ -215,7 +215,7 @@ export const allProjects: Project[] = [
     description:
       'Logo, colour system, typography, and a complete brand guide for a growing B2B SaaS product.',
     tags: ['Branding'],
-    image: 'https://picsum.photos/seed/case05/900/563',
+    image: '/images/work/brand-identity.jpg',
     imageAlt: 'Brand identity project',
     layout: 'wide',
   },
@@ -226,13 +226,13 @@ export const teamMembers: TeamMember[] = [
     name: 'Dimensity Labs',
     role: 'Founder & CEO',
     bio: 'Designer, developer, and AI enthusiast. Building Dimensity Labs to bridge the gap between great ideas and great digital products.',
-    image: 'https://picsum.photos/seed/founder/400/533',
+    image: '/images/team/founder.jpg',
   },
   {
     name: "We're Growing",
     role: 'Interested in working together? Reach out.',
     href: '/contact',
-    image: 'https://picsum.photos/seed/growing/400/533',
+    image: '/images/team/growing.jpg',
   },
 ];
 
@@ -432,7 +432,7 @@ export const offices: Office[] = [
 ];
 
 export const contactEmails: ContactEmail[] = [
-  { label: 'New Business', email: 'hello@dimensitylabs.com' },
+  { label: 'New Business', email: 'hello@dimensitylabs.dev' },
 ];
 
 export const socialLinks = [
