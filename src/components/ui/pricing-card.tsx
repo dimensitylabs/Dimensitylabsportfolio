@@ -158,9 +158,9 @@ function Separator({
 			)}
 			{...props}
 		>
-			<span className="bg-muted-foreground/40 h-[1px] flex-1" />
+			<span className="bg-muted-foreground/40 h-px flex-1" />
 			<span className="text-muted-foreground shrink-0">{children}</span>
-			<span className="bg-muted-foreground/40 h-[1px] flex-1" />
+			<span className="bg-muted-foreground/40 h-px flex-1" />
 		</div>
 	);
 }

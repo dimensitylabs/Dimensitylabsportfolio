@@ -2,8 +2,10 @@
 import type { Metadata } from 'next';
 import ServicesAnimations from '@/components/ServicesAnimations';
 import { ServicesList } from '@/components/sections/services/ServicesList';
-import { CTA } from '@/components/sections/home/CTA';
+import dynamic from 'next/dynamic';
 import { faqs } from '@/lib/data';
+
+const CTA = dynamic(() => import('@/components/sections/home/CTA').then((m) => m.CTA));
 
 export const metadata: Metadata = {
   title: 'Services',
