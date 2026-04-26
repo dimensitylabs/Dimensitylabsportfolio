@@ -6,6 +6,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import CustomCursor from '@/components/CustomCursor';
+import { organizationSchema, localBusinessSchema } from '@/lib/structured-data';
 
 const syne = Syne({
   variable: '--font-syne',
@@ -80,37 +81,6 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Dimensity Labs',
-  url: 'https://www.dimensitylabs.dev',
-  logo: 'https://www.dimensitylabs.dev/favicon.ico',
-  description:
-    'Digital agency in Mumbai offering web development, mobile app development, AI solutions, and workflow automation.',
-};
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Dimensity Labs',
-  image: 'https://www.dimensitylabs.dev/favicon.ico',
-  url: 'https://www.dimensitylabs.dev',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Mumbai',
-    addressCountry: 'IN',
-  },
-  areaServed: ['Mumbai', 'India', 'Global'],
-  serviceType: [
-    'Web Development',
-    'Mobile App Development',
-    'AI Solutions',
-    'AI Automation',
-    'Digital Branding',
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -130,13 +100,12 @@ export default function RootLayout({
         >
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
           />
-          <div className="page-load-bar" aria-hidden="true" />
           <CustomCursor />
           <Navbar />
           <main>{children}</main>

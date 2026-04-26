@@ -1,16 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { getAllServiceSlugs } from '@/lib/services.data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.dimensitylabs.dev';
   const now = new Date();
-  const serviceSlugs = [
-    'web-development',
-    'mobile-app-development',
-    'ai-solutions',
-    'ai-automation',
-    'digital-branding',
-    'consulting-strategy',
-  ];
+  const serviceSlugs = getAllServiceSlugs();
 
   const coreRoutes: MetadataRoute.Sitemap = [
     {

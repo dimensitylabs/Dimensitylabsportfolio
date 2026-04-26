@@ -1,12 +1,21 @@
 // src/app/page.tsx
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import HomeAnimations from '@/components/HomeAnimations';
-import Preloader from '@/components/Preloader';
 import { Hero } from '@/components/sections/home/Hero';
-import { Services } from '@/components/sections/home/Services';
-import { FeaturedWork } from '@/components/sections/home/FeaturedWork';
-import { Testimonials } from '@/components/sections/home/Testimonials';
-import { CTA } from '@/components/sections/home/CTA';
+
+const Services = dynamic(() => import('@/components/sections/home/Services').then((m) => m.Services), {
+  loading: () => <div className="skeleton-block" style={{ height: '400px', borderRadius: 'var(--radius-md)' }} />,
+});
+const FeaturedWork = dynamic(() => import('@/components/sections/home/FeaturedWork').then((m) => m.FeaturedWork), {
+  loading: () => <div className="skeleton-block" style={{ height: '400px', borderRadius: 'var(--radius-md)' }} />,
+});
+const Testimonials = dynamic(() => import('@/components/sections/home/Testimonials').then((m) => m.Testimonials), {
+  loading: () => <div className="skeleton-block" style={{ height: '300px', borderRadius: 'var(--radius-md)' }} />,
+});
+const CTA = dynamic(() => import('@/components/sections/home/CTA').then((m) => m.CTA), {
+  loading: () => <div className="skeleton-block" style={{ height: '200px', borderRadius: 'var(--radius-md)' }} />,
+});
 
 export const metadata: Metadata = {
   title: 'Dimensity Labs',
@@ -35,7 +44,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Preloader />
       <HomeAnimations />
       <Hero />
       <Services />
