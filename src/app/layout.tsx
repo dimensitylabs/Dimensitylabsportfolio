@@ -6,7 +6,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import CustomCursor from '@/components/CustomCursor';
-import { organizationSchema, localBusinessSchema } from '@/lib/structured-data';
+import { organizationSchema } from '@/lib/structured-data';
 
 const syne = Syne({
   variable: '--font-syne',
@@ -101,10 +101,6 @@ export default function RootLayout({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
           />
           <CustomCursor />
           <Navbar />

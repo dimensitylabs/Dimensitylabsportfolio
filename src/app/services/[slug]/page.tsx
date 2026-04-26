@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { serviceSchema as buildServiceSchema, breadcrumbSchema as buildBreadcrumbSchema } from '@/lib/structured-data';
-import { getService } from '@/lib/services.data';
+import { buildMetadata } from '@/lib/metadata';
+import { getService, getAllServiceSlugs } from '@/lib/services.data';
 
 type ServiceSeoData = {
   name: string;
@@ -135,7 +136,19 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return Object.keys(servicePages).map((slug) => ({ slug }));
+  const seoSlugs = Object.keys(servicePages);
+  const dataSlugs = getAllServiceSlugs();
+
+  // Build-time validation: catch drift between data sources immediately
+  const missingInData = seoSlugs.filter((s) => !dataSlugs.includes(s));
+  const missingInSeo = dataSlugs.filter((s) => !seoSlugs.includes(s));
+  if (missingInData.length > 0 || missingInSeo.length > 0) {
+    throw new Error(
+      `[services/[slug]] Data source mismatch: seoSlugs missing in data=[${missingInData.join(', ')}]; dataSlugs missing in seo=[${missingInSeo.join(', ')}]`
+    );
+  }
+
+  return dataSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -145,9 +158,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const url = `https://dimensitylabs.dev/services/${slug}`;
+  const url = `https://www.dimensitylabs.dev/services/${slug}`;
 
-  return {
+  return buildMetadata({
     title: service.name,
     description: service.metaDescription,
     keywords: service.keywords,
@@ -161,27 +174,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article',
     },
     twitter: {
-      card: 'summary_large_image',
       title: service.name,
       description: service.metaDescription,
     },
-  };
+  });
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const seoData = servicePages[slug];
-  if (!seoData) {
+  const richData = getService(slug);
+
+  if (!seoData && !richData) {
     notFound();
   }
 
-  const richData = getService(slug);
+  const pageTitle = seoData?.name ?? richData?.title ?? '';
+  const pageIntro = seoData?.intro ?? richData?.description ?? '';
+  const pageShortTitle = seoData?.shortTitle ?? richData?.title ?? '';
+  const pageDeliverables = seoData?.deliverables ?? richData?.features ?? [];
 
-  const svcSchema = buildServiceSchema(seoData, slug);
+  const svcSchema = buildServiceSchema(
+    seoData ?? { name: pageTitle, metaDescription: pageIntro, shortTitle: pageShortTitle },
+    slug
+  );
   const bcSchema = buildBreadcrumbSchema([
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
-    { label: seoData.shortTitle, href: `/services/${slug}` },
+    { label: pageShortTitle, href: `/services/${slug}` },
   ]);
 
   const faqSchema = richData?.faq?.length
@@ -219,9 +239,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <div className="container" style={{ maxWidth: '900px' }}>
         {/* Hero */}
         <p className="t-label" style={{ marginBottom: 'var(--sp-sm)' }}>Services</p>
-        <h1 className="t-h1" style={{ marginBottom: 'var(--sp-md)' }}>{seoData.name}</h1>
+        <h1 className="t-h1" style={{ marginBottom: 'var(--sp-md)' }}>{pageTitle}</h1>
         <p className="t-body-lg" style={{ color: 'var(--clr-ink-mid)', marginBottom: 'var(--sp-xl)' }}>
-          {seoData.intro}
+          {pageIntro}
         </p>
 
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: 'var(--sp-3xl)' }}>
@@ -232,7 +252,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         {/* What You Get — rich features from services.data.ts */}
         <h2 className="t-h3" style={{ marginBottom: 'var(--sp-md)' }}>What You Get</h2>
         <ul style={{ display: 'grid', gap: '12px', marginBottom: 'var(--sp-3xl)' }}>
-          {(richData?.features ?? seoData.deliverables).map((item) => (
+          {pageDeliverables.map((item) => (
             <li key={item} style={{ color: 'var(--clr-ink-mid)', paddingLeft: '1.25em', position: 'relative' }}>
               <span style={{ position: 'absolute', left: 0 }}>—</span>
               {item}
