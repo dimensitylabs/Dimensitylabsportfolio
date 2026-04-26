@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { serviceSchema as buildServiceSchema, breadcrumbSchema as buildBreadcrumbSchema } from '@/lib/structured-data';
+import { getService } from '@/lib/services.data';
 
 type ServiceSeoData = {
   name: string;
@@ -143,7 +145,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const url = `https://dimensitylabs.com/services/${slug}`;
+  const url = `https://dimensitylabs.dev/services/${slug}`;
 
   return {
     title: service.name,
@@ -168,80 +170,149 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const service = servicePages[slug];
-  if (!service) {
+  const seoData = servicePages[slug];
+  if (!seoData) {
     notFound();
   }
 
-  const serviceUrl = `https://dimensitylabs.com/services/${slug}`;
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: service.name,
-    provider: {
-      '@type': 'Organization',
-      name: 'Dimensity Labs',
-      url: 'https://dimensitylabs.com',
-    },
-    areaServed: 'Mumbai',
-    description: service.metaDescription,
-    serviceType: service.shortTitle,
-    url: serviceUrl,
-  };
+  const richData = getService(slug);
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://dimensitylabs.com',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Services',
-        item: 'https://dimensitylabs.com/services',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: service.shortTitle,
-        item: serviceUrl,
-      },
-    ],
-  };
+  const svcSchema = buildServiceSchema(seoData, slug);
+  const bcSchema = buildBreadcrumbSchema([
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: seoData.shortTitle, href: `/services/${slug}` },
+  ]);
+
+  const faqSchema = richData?.faq?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: richData.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <section style={{ paddingTop: 'calc(var(--nav-h) + var(--sp-2xl))', paddingBottom: 'var(--sp-2xl)' }}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(svcSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bcSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="container" style={{ maxWidth: '900px' }}>
+        {/* Hero */}
         <p className="t-label" style={{ marginBottom: 'var(--sp-sm)' }}>Services</p>
-        <h1 className="t-h1" style={{ marginBottom: 'var(--sp-md)' }}>{service.name}</h1>
+        <h1 className="t-h1" style={{ marginBottom: 'var(--sp-md)' }}>{seoData.name}</h1>
         <p className="t-body-lg" style={{ color: 'var(--clr-ink-mid)', marginBottom: 'var(--sp-xl)' }}>
-          {service.intro}
+          {seoData.intro}
         </p>
 
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: 'var(--sp-3xl)' }}>
+          <Link href="/contact" className="btn btn--primary">Start a Project</Link>
+          <Link href="/work" className="btn btn--outline">View Case Studies</Link>
+        </div>
+
+        {/* What You Get — rich features from services.data.ts */}
         <h2 className="t-h3" style={{ marginBottom: 'var(--sp-md)' }}>What You Get</h2>
-        <ul style={{ display: 'grid', gap: '12px', marginBottom: 'var(--sp-xl)' }}>
-          {service.deliverables.map((item) => (
-            <li key={item} style={{ color: 'var(--clr-ink-mid)' }}>{item}</li>
+        <ul style={{ display: 'grid', gap: '12px', marginBottom: 'var(--sp-3xl)' }}>
+          {(richData?.features ?? seoData.deliverables).map((item) => (
+            <li key={item} style={{ color: 'var(--clr-ink-mid)', paddingLeft: '1.25em', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: 0 }}>—</span>
+              {item}
+            </li>
           ))}
         </ul>
 
+        {/* Process */}
+        {richData?.process && richData.process.length > 0 && (
+          <>
+            <h2 className="t-h3" style={{ marginBottom: 'var(--sp-lg)' }}>Our Process</h2>
+            <div style={{ display: 'grid', gap: 'var(--sp-lg)', marginBottom: 'var(--sp-3xl)' }}>
+              {richData.process.map((step, i) => (
+                <div key={step.title} style={{ display: 'flex', gap: 'var(--sp-md)', alignItems: 'flex-start' }}>
+                  <span
+                    className="t-label"
+                    style={{
+                      flexShrink: 0,
+                      width: '32px',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderRadius: '50%',
+                      border: '1px solid var(--clr-border)',
+                      fontSize: '0.75rem',
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 style={{ fontFamily: 'var(--font-syne)', fontWeight: 600, marginBottom: '4px' }}>
+                      {step.title}
+                    </h3>
+                    <p style={{ color: 'var(--clr-ink-mid)', lineHeight: 1.6 }}>{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* FAQ */}
+        {richData?.faq && richData.faq.length > 0 && (
+          <>
+            <h2 className="t-h3" style={{ marginBottom: 'var(--sp-lg)' }}>Frequently Asked Questions</h2>
+            <div style={{ marginBottom: 'var(--sp-3xl)' }}>
+              {richData.faq.map((item) => (
+                <details
+                  key={item.question}
+                  style={{ borderBottom: '1px solid var(--clr-border)', paddingBlock: 'var(--sp-md)' }}
+                >
+                  <summary
+                    style={{
+                      fontFamily: 'var(--font-syne)',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      listStyle: 'none',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      gap: 'var(--sp-md)',
+                    }}
+                  >
+                    {item.question}
+                    <span style={{ flexShrink: 0, fontSize: '1.25rem', color: 'var(--clr-muted)' }}>+</span>
+                  </summary>
+                  <p style={{ marginTop: 'var(--sp-sm)', color: 'var(--clr-ink-mid)', lineHeight: 1.65 }}>
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Bottom CTA */}
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <Link href="/contact" className="btn btn--primary">Start a Project</Link>
-          <Link href="/work" className="btn btn--outline">View Case Studies</Link>
           <Link href="/services" className="btn btn--outline">All Services</Link>
         </div>
       </div>
