@@ -432,7 +432,7 @@ export const offices: Office[] = [
 ];
 
 export const contactEmails: ContactEmail[] = [
-  { label: 'New Business', email: 'hello@dimensitylabs.dev' },
+  { label: 'New Business', email: 'business@dimensitylabs.dev' },
 ];
 
 export const socialLinks = [

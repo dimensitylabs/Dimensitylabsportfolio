@@ -7,7 +7,7 @@ export function organizationSchema() {
     name: 'Dimensity Labs',
     url: BASE_URL,
     logo: `${BASE_URL}/favicon.ico`,
-    email: 'hello@dimensitylabs.dev',
+    email: 'business@dimensitylabs.dev',
     foundingDate: '2025',
     description:
       'Digital agency in Mumbai offering web development, mobile app development, AI solutions, and workflow automation.',
@@ -32,7 +32,7 @@ export function localBusinessSchema() {
     '@type': 'ProfessionalService',
     name: 'Dimensity Labs',
     url: BASE_URL,
-    email: 'hello@dimensitylabs.dev',
+    email: 'business@dimensitylabs.dev',
     image: `${BASE_URL}/favicon.ico`,
     address: {
       '@type': 'PostalAddress',

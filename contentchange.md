@@ -170,9 +170,9 @@
 |---|---|---|---|
 | C1 | Page Headline | `Let's build something inevitable.` | `Let's Build Something Together.` |
 | C2 | Status badge | `Currently accepting projects — Booking Q2 2026` | `Currently accepting projects — Response within 24 hours` |
-| C3 | Email — New Business | `hello@Dimensity Labsstudio.com` | `hello@dimensitylabs.com` (or your real email) |
+| C3 | Email — New Business | `business@Dimensity Labsstudio.com` | `business@dimensitylabs.com` (or your real email) |
 | C4 | Email — Press | `press@Dimensity Labsstudio.com` | Remove OR change to same email with subject line routing |
-| C5 | Email — Careers | `careers@Dimensity Labsstudio.com` | Remove OR keep as `hello@dimensitylabs.com` |
+| C5 | Email — Careers | `careers@Dimensity Labsstudio.com` | Remove OR keep as `business@dimensitylabs.com` |
 | C6 | Award badges | D&AD Pencil, Cannes Lions, SND Award, Awwwards SOTD, Red Dot | **Remove entirely** |
 | C7 | Form — Service dropdown | Brand Identity & Strategy, Digital Experience Design, Motion & Visual Systems, Campaign & Art Direction, Packaging & Print, Content & Editorial, Not sure yet | Web Design & Development, Mobile App Development, AI Solutions, AI Automation, Digital Branding, Consulting & Strategy, Not sure yet — let's talk |
 | C8 | Form — Budget dropdown | Under €15k, €15k–€30k, €30k–€60k, €60k–€100k, Over €100k, Not sure | Under ₹25,000, ₹25,000–₹75,000, ₹75,000–₹2,00,000, ₹2,00,000+, Not sure — let's discuss |

@@ -358,8 +358,8 @@ Now → Growing Fast (no date — keep this relative)
 
 ### BUG-B02 🔴 Email domain mismatch — `.com` on a `.dev` site
 **File:** `app/contact/page.tsx` · `lib/metadata.ts` · `.env`
-**Symptom:** The contact page displays `hello@dimensitylabs.com` as the contact email, but the site domain is `dimensitylabs.dev`. The mismatch is immediately visible and signals either a mistake or that the site is a template not fully configured.
-**Steps to reproduce:** Visit `/contact`. Find the email display. It reads `hello@dimensitylabs.com`.
+**Symptom:** The contact page displays `business@dimensitylabs.com` as the contact email, but the site domain is `dimensitylabs.dev`. The mismatch is immediately visible and signals either a mistake or that the site is a template not fully configured.
+**Steps to reproduce:** Visit `/contact`. Find the email display. It reads `business@dimensitylabs.com`.
 **Fix:**
 ```bash
 # Find every instance across your owned files
@@ -368,7 +368,7 @@ grep -r "dimensitylabs.com" app/ lib/ .env --include="*.tsx" --include="*.ts"
 Update every hit to `dimensitylabs.dev`:
 - `app/contact/page.tsx` — `mailto:` link
 - `lib/metadata.ts` — if email is referenced in metadata
-- `.env` — `CONTACT_EMAIL=hello@dimensitylabs.dev`
+- `.env` — `CONTACT_EMAIL=business@dimensitylabs.dev`
 - `app/api/contact/route.ts` — sender/recipient config
 **Affects:** `/contact`, footer, any page referencing the email
 

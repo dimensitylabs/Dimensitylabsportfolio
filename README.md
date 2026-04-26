@@ -138,7 +138,7 @@ This project is private. All rights reserved.
 ## 📞 Contact
 
 - **Website**: https://dimensitylabs.com
-- **Email**: hello@dimensitylabs.com
+- **Email**: business@dimensitylabs.com
 - **Location**: Mumbai, India (Remote-first, available globally)
 
 ---
