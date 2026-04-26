@@ -6,7 +6,6 @@ import { gsap, ScrollTrigger } from '@/lib/gsap';
 export default function HomeAnimations() {
   useEffect(() => {
     const cleanupFns: Array<() => void> = [];
-    let originalQuoteText: string | null = null;
 
     const ctx = gsap.context(() => {
 
@@ -209,31 +208,19 @@ export default function HomeAnimations() {
         });
       });
 
-      const quoteEl = document.querySelector<HTMLElement>('.manifesto-quote');
-      if (quoteEl) {
-        originalQuoteText = quoteEl.textContent ?? '';
-        const words = originalQuoteText.trim().split(' ');
-        quoteEl.innerHTML = words
-          .map(
-            (w) =>
-              `<span class="word" style="display:inline-block;overflow:hidden"><span class="word-inner" style="display:inline-block">${w}&nbsp;</span></span>`,
-          )
-          .join('');
-
-        gsap.from('.word-inner', {
-          y: '110%',
-          opacity: 0,
-          stagger: 0.04,
-          duration: 0.7,
-          ease: 'power3.out',
-          clearProps: 'all',
-          scrollTrigger: {
-            trigger: quoteEl,
-            start: 'top 88%',
-            toggleActions: 'play none none none',
-          },
-        });
-      }
+      gsap.from('.testimonial-card', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.1,
+        duration: 0.7,
+        ease: 'power3.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.testimonials-list',
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
 
       gsap.from('.bottom-stat', {
         opacity: 0,
@@ -269,10 +256,6 @@ export default function HomeAnimations() {
 
     return () => {
       cleanupFns.forEach((fn) => fn());
-      if (originalQuoteText !== null) {
-        const quoteEl = document.querySelector<HTMLElement>('.manifesto-quote');
-        if (quoteEl) quoteEl.textContent = originalQuoteText;
-      }
       window.removeEventListener('load', handleLoad);
       ctx.revert();
     };
