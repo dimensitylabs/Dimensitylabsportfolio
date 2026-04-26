@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/Button';
 import { ServiceCard } from '@/components/sections/services/ServiceCard';
 import { PricingCards } from '@/components/sections/services/PricingCards';
 import PricingCalculator from '@/components/PricingCalculator';
-import { services, processSteps, faqs } from '@/lib/data';
+import { services, processSteps, faqs, testimonials } from '@/lib/data';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 const serviceLinks = [
   { href: '/services/web-development', label: 'Web Development' },
@@ -80,8 +81,8 @@ export function ServicesList() {
           <AnimatedSection as="div">
             <SectionHeading
               eyebrow="Our Process"
-              titleHtml='Four phases.<br /><em>No filler.</em>'
-              title="Four phases. No filler."
+              titleHtml='Four Phases. No Filler.'
+              title="Four Phases. No Filler."
               dark
             />
           </AnimatedSection>
@@ -120,8 +121,8 @@ export function ServicesList() {
           <AnimatedSection as="div">
             <SectionHeading
               eyebrow="Investment"
-              titleHtml='Transparent pricing.<br /><em>Radical, we know.</em>'
-              title="Transparent pricing. Radical, we know."
+              titleHtml='Transparent Pricing.'
+              title="Transparent Pricing."
             />
           </AnimatedSection>
         </div>
@@ -130,6 +131,34 @@ export function ServicesList() {
       <PricingCards />
 
       <PricingCalculator />
+
+      {/* Testimonials strip */}
+      <section style={{ paddingBlock: 'var(--sp-3xl)', borderTop: '1px solid var(--clr-border)' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <AnimatedSection as="div">
+            <SectionHeading
+              eyebrow="What Clients Say"
+              title="Results that speak for themselves."
+            />
+          </AnimatedSection>
+          <div className="testimonials-list">
+            {testimonials.map((t, i) => (
+              <AnimatedSection as="div" key={i} delay={i * 0.08}>
+                <div className="testimonial-card">
+                  <p className="testimonial-quote">&#8220;{t.quote}&#8221;</p>
+                  <div className="testimonial-attribution">
+                    <div className="testimonial-avatar" aria-hidden="true">{t.initials}</div>
+                    <div>
+                      <div className="testimonial-name">{t.name}</div>
+                      <div className="testimonial-meta">{t.title}, {t.company}</div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQs */}
       <section
@@ -144,50 +173,8 @@ export function ServicesList() {
               title="Common questions, honest answers."
             />
           </AnimatedSection>
-
           <div style={{ marginTop: 'var(--sp-xl)' }}>
-            {faqs.map((faq, i) => (
-              <AnimatedSection
-                as="div"
-                className="faq-item"
-                key={i}
-                delay={i * 0.06}
-                style={{
-                  borderBottom: '1px solid var(--clr-border)',
-                  paddingBlock: 'var(--sp-lg)',
-                }}
-              >
-                <details>
-                <summary
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '1.125rem',
-                    fontWeight: 700,
-                    color: 'var(--clr-ink)',
-                    cursor: 'pointer',
-                    listStyle: 'none',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: 'var(--sp-md)',
-                  }}
-                >
-                  {faq.question}
-                  <span style={{ flexShrink: 0, fontSize: '1.25rem', color: 'var(--clr-muted)' }}>+</span>
-                </summary>
-                <p
-                  style={{
-                    marginTop: 'var(--sp-md)',
-                    fontSize: '0.9375rem',
-                    lineHeight: 1.65,
-                    color: 'var(--clr-ink-mid)',
-                  }}
-                >
-                  {faq.answer}
-                </p>
-                </details>
-              </AnimatedSection>
-            ))}
+            <FAQAccordion faqs={faqs} />
           </div>
         </div>
       </section>

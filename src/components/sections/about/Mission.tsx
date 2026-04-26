@@ -75,8 +75,8 @@ export function Mission() {
               <AnimatedSection as="div">
                 <SectionHeading
                   eyebrow="Our Story"
-                  titleHtml='How we got <em>here.</em>'
-                  title="How we got here."
+                  titleHtml='How We Got Here.'
+                  title="How We Got Here."
                 />
                 <p style={{ color: 'var(--clr-muted)', marginTop: 'var(--sp-md)', maxWidth: '440px', lineHeight: 1.65 }}>
                   We started Dimensity Labs to help founders and teams move from
