@@ -1,6 +1,7 @@
 // src/components/sections/home/Testimonials.tsx
+import { testimonials, philosophyStats } from '@/lib/data';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { testimonial, philosophyStats } from '@/lib/data';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 
 export function Testimonials() {
   return (
@@ -8,11 +9,24 @@ export function Testimonials() {
       <div className="container">
         <div className="philosophy-inner">
           <AnimatedSection as="div">
-            <span className="big-quote" aria-hidden="true">&ldquo;</span>
-            <blockquote>
-              <p className="blockquote-text manifesto-quote">{testimonial.quote}</p>
-              <footer className="blockquote-attr">{testimonial.attribution}</footer>
-            </blockquote>
+            <SectionHeading
+              eyebrow="What Clients Say"
+              title="Results that speak for themselves."
+            />
+            <div className="testimonials-list">
+              {testimonials.map((t, i) => (
+                <div className="testimonial-card" key={i}>
+                  <p className="testimonial-quote">&#8220;{t.quote}&#8221;</p>
+                  <div className="testimonial-attribution">
+                    <div className="testimonial-avatar" aria-hidden="true">{t.initials}</div>
+                    <div>
+                      <div className="testimonial-name">{t.name}</div>
+                      <div className="testimonial-meta">{t.title}, {t.company}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </AnimatedSection>
 
           <AnimatedSection as="div" className="philosophy-stats bottom-stats" delay={0.15}>

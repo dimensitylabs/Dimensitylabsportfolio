@@ -38,6 +38,15 @@ export interface Testimonial {
   attribution: string;
 }
 
+export interface TestimonialFull {
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+  initials: string;
+  avatar?: string;
+}
+
 export interface Value {
   icon: string;
   title: string;
