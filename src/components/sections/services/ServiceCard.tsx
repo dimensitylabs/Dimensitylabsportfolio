@@ -1,5 +1,6 @@
 // src/components/sections/services/ServiceCard.tsx
-import { AnimatedSection } from '@/components/ui/AnimatedSection';
+'use client';
+import { motion } from 'framer-motion';
 import type { Service } from '@/lib/types';
 
 interface ServiceCardProps {
@@ -9,10 +10,16 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
   return (
-    <AnimatedSection
-      as="div"
+    <motion.div
       className="service-row service-block"
-      delay={index * 0.08}
+      initial={{ opacity: 0, x: -24 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: '-8%' }}
+      transition={{
+        duration: 0.55,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        delay: index * 0.08,
+      }}
     >
       <div>
         <span className="service-row-num service-block-number">{service.num}</span>
@@ -42,6 +49,6 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       <span className="service-row-link" aria-hidden="true">
         Enquire ↗
       </span>
-    </AnimatedSection>
+    </motion.div>
   );
 }

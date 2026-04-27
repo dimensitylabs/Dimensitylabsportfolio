@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { StickyCTA } from '@/components/StickyCTA';
 import CustomCursor from '@/components/CustomCursor';
 import { organizationSchema } from '@/lib/structured-data';
 
@@ -106,6 +107,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <StickyCTA />
         </ThemeProvider>
       </body>
     </html>

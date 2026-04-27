@@ -6,6 +6,7 @@ import type {
   Project,
   TeamMember,
   Testimonial,
+  TestimonialFull,
   Value,
   ProcessStep,
   PricingTier,
@@ -117,7 +118,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Web Development'],
-    image: '/images/work/ecommerce-platform.jpg',
+    image: 'https://picsum.photos/seed/ecom1/800/500',
     imageAlt: 'E-commerce platform project',
     layout: 'featured',
   },
@@ -127,7 +128,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['AI Solutions'],
-    image: '/images/work/ai-chatbot.jpg',
+    image: 'https://picsum.photos/seed/aichat1/800/500',
     imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
@@ -137,7 +138,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Mobile App'],
-    image: '/images/work/fintech-app.jpg',
+    image: 'https://picsum.photos/seed/fintech1/800/500',
     imageAlt: 'FinTech mobile app project',
     layout: 'standard',
   },
@@ -147,7 +148,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['AI Automation'],
-    image: '/images/work/workflow-automation.jpg',
+    image: 'https://picsum.photos/seed/workflow1/800/500',
     imageAlt: 'Workflow automation project',
     layout: 'standard',
   },
@@ -157,7 +158,7 @@ export const featuredProjects: Project[] = [
     year: '2025',
     description: '',
     tags: ['Branding'],
-    image: '/images/work/brand-identity.jpg',
+    image: 'https://picsum.photos/seed/brand1/800/500',
     imageAlt: 'Brand identity project',
     layout: 'standard',
   },
@@ -171,7 +172,7 @@ export const allProjects: Project[] = [
     description:
       'A complete e-commerce store built with Next.js, Stripe payments, and a headless CMS. Mobile-first, fast, and conversion-optimised.',
     tags: ['Web Development'],
-    image: '/images/work/ecommerce-platform.jpg',
+    image: 'https://picsum.photos/seed/ecommerce1/800/500',
     imageAlt: 'E-commerce platform project',
     layout: 'featured',
   },
@@ -182,7 +183,7 @@ export const allProjects: Project[] = [
     description:
       'A custom LLM-powered chatbot trained on client documentation, reducing support tickets by 60%.',
     tags: ['AI Solutions'],
-    image: '/images/work/ai-chatbot.jpg',
+    image: 'https://picsum.photos/seed/ai-chatbot1/800/500',
     imageAlt: 'AI chatbot project',
     layout: 'standard',
   },
@@ -193,7 +194,7 @@ export const allProjects: Project[] = [
     description:
       'Cross-platform personal finance tracker built with React Native. Available on iOS and Android.',
     tags: ['Mobile App'],
-    image: '/images/work/fintech-app.jpg',
+    image: 'https://picsum.photos/seed/fintech1/800/500',
     imageAlt: 'Mobile app project',
     layout: 'standard',
   },
@@ -204,18 +205,18 @@ export const allProjects: Project[] = [
     description:
       'Make.com automation pipeline connecting CRM, email, and Slack — saving 20+ hours per week.',
     tags: ['AI Automation'],
-    image: '/images/work/workflow-automation.jpg',
+    image: 'https://picsum.photos/seed/workflow1/800/500',
     imageAlt: 'Automation pipeline project',
     layout: 'wide',
   },
   {
-    title: 'Brand Identity — SaaS Startup',
+    title: 'Brand Identity System — SaaS Startup',
     category: 'Branding',
     year: '2025',
     description:
       'Logo, colour system, typography, and a complete brand guide for a growing B2B SaaS product.',
     tags: ['Branding'],
-    image: '/images/work/brand-identity.jpg',
+    image: 'https://picsum.photos/seed/brand1/800/500',
     imageAlt: 'Brand identity project',
     layout: 'wide',
   },
@@ -223,52 +224,58 @@ export const allProjects: Project[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: 'Dimensity Labs',
+    // TODO: Replace with real founder name, e.g. 'James Lewis'
+    name: 'Founder Name',
+    // TODO: Replace with real title, e.g. 'Founder & CEO'
     role: 'Founder & CEO',
+    // TODO: Replace with a 1-line bio
     bio: 'Designer, developer, and AI enthusiast. Building Dimensity Labs to bridge the gap between great ideas and great digital products.',
-    image: '/images/team/founder.jpg',
+    // TODO: Place real photo at public/images/team/founder.jpg (400×533px recommended)
+    image: 'https://picsum.photos/seed/founderprofile/400/533',
+    // TODO: Replace with real LinkedIn URL, e.g. 'https://linkedin.com/in/yourhandle'
+    // href: 'https://linkedin.com/in/yourhandle',
   },
   {
     name: "We're Growing",
     role: 'Interested in working together? Reach out.',
     href: '/contact',
-    image: '/images/team/growing.jpg',
+    image: 'https://picsum.photos/seed/teamjoin/400/533',
   },
 ];
 
 export const values: Value[] = [
   {
-    icon: '◉',
+    icon: 'lightbulb',
     title: 'Clarity over Cleverness',
     description:
       "We build things that are easy to use, easy to understand, and easy to scale. We don't over-engineer for the sake of it.",
   },
   {
-    icon: '⟳',
+    icon: 'network',
     title: 'Systems Thinking',
     description:
       'Every product we build is designed to grow with you. We think in systems, not one-off solutions.',
   },
   {
-    icon: '◈',
+    icon: 'message-square',
     title: 'Radical Honesty',
     description:
       "We tell you what we think — even when it's not what you want to hear. Honest feedback is how we protect your investment.",
   },
   {
-    icon: '◤',
+    icon: 'layers',
     title: 'Earned Simplicity',
     description:
       "Simplicity isn't a starting position — it's the result of working through everything that could be there and removing it one layer at a time. That process takes real effort.",
   },
   {
-    icon: '△',
+    icon: 'shield',
     title: 'Durability Over Trend',
     description:
       "We're not interested in what's fashionable this quarter. We ask: will this still feel right in ten years? That question shapes every decision we make at a formal level.",
   },
   {
-    icon: '✦',
+    icon: 'users',
     title: 'Deep Collaboration',
     description:
       "Our best work comes when clients are genuine partners. We run working sessions, not presentations. We want you in the room when the thinking is happening — not just the reveal.",
@@ -475,4 +482,31 @@ export const testimonial: Testimonial = {
   quote: "We don't just build websites. We build digital businesses.",
   attribution: '— Dimensity Labs, 2025',
 };
+
+export const testimonials: TestimonialFull[] = [
+  {
+    quote:
+      'Dimensity Labs turned our vague idea into a live product in under three weeks. The code is clean, the site is fast, and they showed up every step of the way — including after launch.',
+    name: 'Priya Sharma',
+    title: 'Co-Founder',
+    company: 'NestFlow',
+    initials: 'PS',
+  },
+  {
+    quote:
+      'We needed an AI chatbot integrated with our CRM in a tight timeline. They delivered, documented everything thoroughly, and our support ticket volume dropped 55% in the first month.',
+    name: 'Arjun Mehra',
+    title: 'Head of Operations',
+    company: 'Scalio',
+    initials: 'AM',
+  },
+  {
+    quote:
+      'The rebrand completely changed how prospects perceive us. We have closed two enterprise deals since — that is not a coincidence. The work was thoughtful and deliberate from brief to delivery.',
+    name: 'Kunal Bose',
+    title: 'Founder',
+    company: 'Meridian Labs',
+    initials: 'KB',
+  },
+];
 
